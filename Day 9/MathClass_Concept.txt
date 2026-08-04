@@ -1,0 +1,66 @@
+/*
+Topic - Math Class
+    The Math class in Java is a built-in utility class that provides methods 
+    for performing mathematical operations such as finding the maximum, minimum, 
+    square root, power, absolute value, rounding, and more.
+
+    
+All Math Methods:
+| Method                     | Purpose                                     |
+| -------------------------- | ------------------------------------------- |
+| `Math.abs(x)`              | Returns the absolute value                  |
+| `Math.max(a, b)`           | Returns the larger value                    |
+| `Math.min(a, b)`           | Returns the smaller value                   |
+| `Math.sqrt(x)`             | Returns the square root                     |
+| `Math.cbrt(x)`             | Returns the cube root                       |
+| `Math.pow(a, b)`           | Returns a raised to the power of b          |
+| `Math.random()`            | Returns a random number between 0.0 and 1.0 |
+| `Math.round(x)`            | Rounds to the nearest whole number          |
+| `Math.ceil(x)`             | Rounds upward                               |
+| `Math.floor(x)`            | Rounds downward                             |
+| `Math.rint(x)`             | Rounds to the nearest integer as a `double` |
+| `Math.signum(x)`           | Returns the sign of a number                |
+| `Math.copySign(a, b)`      | Copies the sign of one number to another    |
+| `Math.PI`                  | Value of π                                  |
+| `Math.E`                   | Value of Euler's number                     |
+| `Math.exp(x)`              | Returns e raised to x                       |
+| `Math.log(x)`              | Natural logarithm (base e)                  |
+| `Math.log10(x)`            | Base-10 logarithm                           |
+| `Math.log1p(x)`            | Returns ln(1 + x)                           |
+| `Math.expm1(x)`            | Returns eˣ − 1                              |
+| `Math.sin(x)`              | Sine (angle in radians)                     |
+| `Math.cos(x)`              | Cosine (angle in radians)                   |
+| `Math.tan(x)`              | Tangent (angle in radians)                  |
+| `Math.asin(x)`             | Inverse sine                                |
+| `Math.acos(x)`             | Inverse cosine                              |
+| `Math.atan(x)`             | Inverse tangent                             |
+| `Math.atan2(y, x)`         | Angle from x-axis                           |
+| `Math.toRadians(x)`        | Converts degrees to radians                 |
+| `Math.toDegrees(x)`        | Converts radians to degrees                 |
+| `Math.hypot(x, y)`         | Calculates √(x² + y²)                       |
+| `Math.fma(a, b, c)`        | Computes (a × b) + c with one rounding      |
+| `Math.IEEEremainder(a, b)` | IEEE remainder                              |
+| `Math.ulp(x)`              | Returns the size of one ULP                 |
+| `Math.nextUp(x)`           | Next larger floating-point value            |
+| `Math.nextDown(x)`         | Next smaller floating-point value           |
+| `Math.nextAfter(x, y)`     | Next floating-point value toward another    |
+| `Math.scalb(x, n)`         | Multiplies by 2ⁿ                            |
+
+
+Most ask and use methods:
+| Method / Constant | Purpose                                                                  | Return Type                                         |
+| ----------------- | ------------------------------------------------------------------------ | --------------------------------------------------- |
+| `Math.abs(x)`     | Returns the absolute (positive) value of a number.                       | Same as argument (`int`, `long`, `float`, `double`) |
+| `Math.max(a, b)`  | Returns the larger of two values.                                        | Same as arguments                                   |
+| `Math.min(a, b)`  | Returns the smaller of two values.                                       | Same as arguments                                   |
+| `Math.sqrt(x)`    | Returns the square root of a number.                                     | `double`                                            |
+| `Math.pow(a, b)`  | Returns the value of `a` raised to the power `b`.                        | `double`                                            |
+| `Math.cbrt(x)`    | Returns the cube root of a number.                                       | `double`                                            |
+| `Math.ceil(x)`    | Returns the smallest integer greater than or equal to the value.         | `double`                                            |
+| `Math.floor(x)`   | Returns the largest integer less than or equal to the value.             | `double`                                            |
+| `Math.round(x)`   | Rounds the value to the nearest integer.                                 | `int` (for `float`), `long` (for `double`)          |
+| `Math.random()`   | Returns a random number between `0.0` (inclusive) and `1.0` (exclusive). | `double`                                            |
+| `Math.PI`         | Represents the value of π (Pi).                                          | `double`                                            |
+| `Math.E`          | Represents Euler's number (e).                                           | `double`                                            |
+
+*/
