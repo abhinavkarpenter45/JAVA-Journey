@@ -1,0 +1,37 @@
+/*
+Topic - For Loop
+    For loop is a control statement used to execute a block of code a fixed numbers of time
+    it is commonly used to when number od iterations in known in advance
+    
+Example: Counting number
+
+Syntax:
+    for(initialization; condition; updation){
+        // Do something
+    }
+
+Topic - While Loop
+    While loop is a control statement that repeatedly execute a block of code as long as the 
+    specified condition is true. It is commanly used when number od iterations is unknown.
+
+Example: Validation, Menu deriven
+
+Syntax:
+    initialization;
+    while(condition){
+        //Do something
+        Updation
+    };
+
+Topic - Do While Loop
+    Do while loop is the exit controlled loop that executes the code at least once
+    before chacking the condition.
+
+Example: Calculater menu at least show one time.
+
+Syntax:
+    initialization;
+    do{
+        //Do something
+    }while(condition);
+*/
