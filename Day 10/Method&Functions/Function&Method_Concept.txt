@@ -1,0 +1,44 @@
+/*
+Topic – Methods / Function
+
+# Function:
+A function is a reusable block of code that performs a specific task.
+• They take input.
+• Do some processing.
+• Then return output.
+
+# Method:
+A method is a function that is defined inside a class.
+
+
+# Important Conclusion
+
+• Programming Term:
+  Function = Method (in C, Python)
+
+• In Java:
+  Method = Function inside a class
+
+
+# Syntax
+    return_type method_name(P1, P2, ..., Pn)
+    {
+        // Method body
+    }
+Return Type: The return type specifies the type of value that the method returns.
+
+
+# Keywords to Declare a Method
+1. Public: A public method can be accessed from anywhere in the program.
+2. Private: A private method can only be accessed within the same class.
+3. Protected: A protected method can be accessed within the same package and by subclasses in other packages.
+4. Static: A static method belongs to the class rather than to an object.
+5. Non-static: A non-static method belongs to an object and must be called using an object.
+
+
+# Types of Methods:
+1. No Parameter, No Return Value
+2. Parameter, No Return Value
+3. No Parameter, Return Value
+4. Parameter, Return Value
+*/

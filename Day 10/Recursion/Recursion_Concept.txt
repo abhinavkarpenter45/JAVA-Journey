@@ -1,0 +1,141 @@
+===========================
+      RECURSION IN JAVA
+===========================
+
+1. DEFINITION
+
+Recursion is a technique where a method calls itself to solve a smaller
+version of the same problem.
+
+Formula:
+Base Case
+    +
+Recursive Call
+
+Without a base case, recursion runs forever and causes a StackOverflowError.
+
+------------------------------------------------
+
+2. SYNTAX
+
+returnType functionName(parameters) {
+
+    // Base Case
+    if (condition) {
+        return value;
+    }
+
+    // Recursive Call
+    return functionName(smallerProblem);
+}
+
+------------------------------------------------
+
+3. HOW RECURSION WORKS
+
+Example : fun(3)
+
+Calls (goes down)
+fun(3)
+  ↓
+fun(2)
+  ↓
+fun(1)
+  ↓
+fun(0)
+(base case)
+
+Returns (comes up)
+fun(0)
+  ↑
+fun(1)
+  ↑
+fun(2)
+  ↑
+fun(3)
+
+------------------------------------------------
+
+4. EXAMPLE 1: Print Numbers
+
+public class Main {
+
+    static void print(int n) {
+
+        if (n == 0) {
+            return;
+        }
+
+        System.out.println(n);
+
+        print(n - 1);
+    }
+
+    public static void main(String[] args) {
+
+        print(5);
+    }
+}
+
+Output
+
+5
+4
+3
+2
+1
+
+------------------------------------------------
+
+5. COMPONENTS OF RECURSION
+
+1. Base Case
+2. Recursive Call
+3. Smaller Problem
+4. Return Statement
+
+------------------------------------------------
+
+6. ADVANTAGES
+
+• Code becomes shorter.
+• Easy to solve tree and graph problems.
+• Useful for divide-and-conquer algorithms.
+• Natural for mathematical problems.
+
+------------------------------------------------
+
+7. DISADVANTAGES
+
+• Uses more memory (call stack).
+• Can be slower than iteration.
+• If the base case is missing may cause StackOverflowError.
+  
+------------------------------------------------
+
+8. APPLICATIONS
+
+• Factorial
+• Fibonacci
+• Binary Search
+• Tree Traversal
+• Graph DFS
+• Merge Sort
+• Quick Sort
+• Backtracking
+  (N-Queens, Sudoku)
+• Dynamic Programming
+
+------------------------------------------------
+
+9. IMPORTANT POINTS
+★ Every recursive function must have a base case.
+★ Each recursive call should reduce the problem size.
+★ Recursion uses the call stack.
+★ Missing the base case results in StackOverflowError.
+★ Many recursive problems can also be solved using loops (iteration).
+
+------------------------------------------------
+
+NOTE:
+    Recursion is all about BREAKING DOWN a problem into smaller parts and solving it step by step.
