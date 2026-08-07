@@ -1,0 +1,199 @@
+====================================
+           ARRAYS IN JAVA
+====================================
+
+1. What is Array?
+
+An array is a collection of
+similar data types stored in
+contiguous (continuous) memory
+locations.
+
+Key Points:
+• Fixed size
+• 0-based indexing
+• Stores similar data types
+
+--------------------------------------------------
+
+2. Declaration of Array
+
+// Method 1
+int[] arr;
+arr = new int[5];
+
+// Method 2
+int arr[] = new int[5];
+
+// Method 3 (with values)
+int[] arr = {10, 20, 30, 40, 50};
+
+--------------------------------------------------
+
+3. Memory Representation
+int[] arr = {10, 20, 30, 40, 50};
+
+Index:  0      1    2     3     4
+Value: [10]  [20]  [30]  [40]  [50]
+        ↑
+   Start Index
+
+Length of array = 5
+Last index = length - 1 = 4
+
+--------------------------------------------------
+
+4. Accessing Elements
+Access element using index.
+
+Syntax:
+arr[index]
+
+Example:
+int[] arr = {10,20,30,40,50};
+arr[0] = 10
+arr[2] = 30
+arr[4] = 50
+
+Index Out Of Bound
+if index < 0 or >= length
+
+--------------------------------------------------
+
+5. Traversing Array
+
+(i) Using for loop
+for(int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+
+(ii) Using for-each loop
+for(int val : arr) {
+    System.out.println(val);
+}
+
+--------------------------------------------------
+
+6. Length of Array
+
+Use length property.
+int[] arr = new int[5];
+int n = arr.length;    // 5
+
+--------------------------------------------------
+
+7. Arrays are Objects in Java
+• Array is an object of a class.
+• It is created using new keyword.
+• It has methods and properties.
+• length is a property.
+
+--------------------------------------------------
+
+8. Common Operations
+
+① Insertion
+Not possible directly.
+Create new array and copy elements.
+
+② Deletion
+Not possible directly.
+Create new array and copy remaining elements.
+
+③ Searching
+Use linear search or
+binary search (if sorted).
+
+④ Update
+Directly update using index.
+
+--------------------------------------------------
+
+9. Example Program
+public class Main {
+    public static void main(String[] args) {
+
+        int[] arr = {5,10,15,20,25};
+
+        System.out.println("Elements are:");
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+Output:
+Elements are:
+5 10 15 20 25
+
+--------------------------------------------------
+
+10. Multidimensional Array
+
+(i) 2D Array
+
+int[][] arr = new int[2][3];
+arr[0][0] = 1;
+arr[0][1] = 2;
+arr[1][0] = 3;
+arr[1][1] = 4;
+arr[1][2] = 5;
+
+Index   [0]   [1]   [2]
+[0]      1     2     0
+[1]      3     4     5
+
+--------------------------------------------------
+
+11. Advantages
+• Code becomes optimized.
+• Random access is possible.
+• Easy to traverse.
+• Used to implement other
+  data structures.
+
+--------------------------------------------------
+
+12. Disadvantages
+• Fixed size (cannot grow or shrink).
+• Insertion and deletion are costly.
+• Wastage of memory if size is large
+  but elements are less.
+
+--------------------------------------------------
+
+13. Important Points
+★ Array index always starts from 0.
+★ Array size is fixed.
+★ Elements must be of same data type.
+★ Array elements are stored in
+  contiguous memory locations.
+
+--------------------------------------------------
+
+14. Difference between Array and ArrayList
+
+Array
+1. Fixed size.
+2. Stores primitive and objects.
+3. Better performance.
+4. Size must be declared.
+5. Syntax :
+int[] arr = new int[5];
+
+ArrayList
+1. Dynamic size (can grow/shrink).
+2. Stores only objects.
+3. Slower than array.
+4. No need to declare size.
+5. Syntax :
+ArrayList<Integer> list =
+new ArrayList<>();
+
+--------------------------------------------------
+
+Note:
+Arrays are very important and are
+the building blocks for many data
+structures and algorithms.

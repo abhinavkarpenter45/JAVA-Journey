@@ -1,0 +1,344 @@
+=========================================
+    ARRAYS - ALL BUILT-IN METHODS (Java)
+=========================================
+
+• In Java, the Arrays class (in java.util package) provides many useful
+  methods to work with arrays.
+
+Import:
+
+import java.util.Arrays;
+
+--------------------------------------------------
+
+1. toString()
+
+Description:
+Returns a string representation
+of the array.
+
+Syntax:
+Arrays.toString(array)
+
+Example:
+int[] arr = {1,2,3,4};
+System.out.println(
+    Arrays.toString(arr)
+);
+// Output:
+[1, 2, 3, 4]
+
+Note:
+Best for printing arrays.
+
+--------------------------------------------------
+
+2. sort()
+
+Description:
+Sorts the array in
+ascending order.
+
+Syntax:
+Arrays.sort(array)
+
+Example:
+int[] arr = {3,1,4,2};
+
+Arrays.sort(arr);
+// Output:
+[1,2,3,4]
+
+Note:
+Works for primitives
+and objects.
+
+--------------------------------------------------
+
+3. binarySearch()
+
+Description:
+Searches the given key
+in a sorted array.
+
+Returns index if found,
+else (-(insertion point)-1).
+
+Syntax:
+Arrays.binarySearch(array,key)
+
+Example:
+int[] arr = {1,2,3,4,5};
+
+int idx =
+Arrays.binarySearch(arr,3);
+// Output:
+2
+
+Note:
+Array must be sorted.
+
+--------------------------------------------------
+
+4. fill()
+
+Description:
+Fills the array with
+the specified value.
+
+Syntax:
+Arrays.fill(array,value)
+
+or
+
+Arrays.fill(array,fromIndex,toIndex,value)
+
+Example:
+int[] arr = new int[5];
+Arrays.fill(arr,7);
+// Output:
+[7,7,7,7,7]
+
+Note:
+Second form fills
+a range.
+
+--------------------------------------------------
+
+5. copyOf()
+
+Description:
+Copies the array,
+returns new array
+of specified length.
+
+Syntax:
+Arrays.copyOf(array,newLength)
+
+Example:
+int[] arr = {1,2,3};
+int[] newArr =
+Arrays.copyOf(arr,5);
+// Output:
+[1,2,3,0,0]
+
+Note:
+Extra elements are filled
+with default value.
+
+--------------------------------------------------
+
+6. copyOfRange()
+
+Description:
+Copies range of array,
+returns new array.
+
+Syntax:
+Arrays.copyOfRange(
+    array,
+    fromIndex,
+    toIndex
+)
+
+Example:
+int[] arr = {10,20,30,40,50};
+int[] newArr =
+Arrays.copyOfRange(arr,1,4);
+// Output:
+[20,30,40]
+
+Note:
+toIndex is exclusive.
+
+--------------------------------------------------
+
+7. equals()
+
+Description:
+Compares two arrays.
+Returns true if both arrays
+contain the same elements
+in the same order.
+
+Syntax:
+Arrays.equals(array1,array2)
+
+Example:
+int[] a = {1,2,3};
+int[] b = {1,2,3};
+System.out.println(
+    Arrays.equals(a,b)
+);
+
+// Output:
+true
+
+Note:
+Checks values,
+not reference.
+
+--------------------------------------------------
+
+8. deepEquals()
+
+Description:
+Compares multidimensional
+arrays.
+
+Syntax:
+Arrays.deepEquals(array1,array2)
+
+Example:
+int[][] a = {{1,2},{3,4}};
+int[][] b = {{1,2},{3,4}};
+System.out.println(
+    Arrays.deepEquals(a,b)
+);
+
+// Output:
+true
+
+Note:
+Used for nested arrays.
+
+--------------------------------------------------
+
+9. deepToString()
+
+Description:
+Prints multidimensional
+arrays properly.
+
+Syntax:
+Arrays.deepToString(array)
+
+Example:
+int[][] arr = {
+    {1,2},
+    {3,4}
+};
+System.out.println(
+    Arrays.deepToString(arr)
+);
+
+// Output:
+[[1, 2], [3, 4]]
+
+Note:
+Best for 2D/3D arrays.
+
+--------------------------------------------------
+
+10. mismatch()
+
+Description:
+Returns the index of the
+first different element.
+Returns -1 if both arrays
+are identical.
+
+Syntax:
+Arrays.mismatch(array1,array2)
+
+Example:
+int[] a = {1,2,3};
+int[] b = {1,5,3};
+System.out.println(
+    Arrays.mismatch(a,b)
+);
+
+// Output:
+1
+
+Note:
+Available from Java 9.
+
+--------------------------------------------------
+
+11. compare()
+
+Description:
+Lexicographically compares
+two arrays.
+
+Syntax:
+Arrays.compare(array1,array2)
+
+Example:
+int[] a = {1,2,3};
+int[] b = {1,2,4};
+System.out.println(
+    Arrays.compare(a,b)
+);
+
+// Output:
+-1
+
+Note:
+Returns:
+0  -> Equal
+<0 -> First is smaller
+>0 -> First is greater
+
+--------------------------------------------------
+
+12. stream()
+
+Description:
+Converts an array into
+a Stream.
+
+Syntax:
+Arrays.stream(array)
+
+Example:
+int[] arr = {1,2,3,4};
+Arrays.stream(arr)
+      .forEach(System.out::println);
+
+Output:
+1
+2
+3
+4
+
+--------------------------------------------------
+
+IMPORTANT NOTES
+★ Arrays class belongs to java.util package.
+★ Import it using: import java.util.Arrays;
+★ Most commonly used methods:
+• toString()
+• sort()
+• binarySearch()
+• fill()
+• copyOf()
+• copyOfRange()
+• equals()
+
+--------------------------------------------------
+
+QUICK EXAMPLE
+
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5,3,1,4,2};
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr)
+        );
+    }
+}
+
+Output:
+[1, 2, 3, 4, 5]
+
+--------------------------------------------------
+
+FINAL NOTE
+The Arrays class makes array
+operations easier, cleaner,
+and faster. It is one of the
+most important utility classes
+for Java programmers.
