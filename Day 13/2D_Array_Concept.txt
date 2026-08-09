@@ -1,0 +1,212 @@
+========================================
+          2D ARRAYS IN JAVA
+========================================
+
+1. Introduction
+
+A 2D array (Two Dimensional array)
+is an array of arrays. It stores
+data in tabular form (rows and
+columns).
+
+Syntax to Declare:
+datatype[][] arrayName;
+
+Example:
+int[][] arr;
+
+--------------------------------------------------
+
+2. How 2D Array is Stored?
+
+              Columns (j)
+                  →
+
+             0       1       2
+
+        0   a[0][0] a[0][1] a[0][2]
+
+Rows    1   a[1][0] a[1][1] a[1][2]
+(i)
+        2   a[2][0] a[2][1] a[2][2]
+
+Access element : array[i][j]
+i → row index and j → column index
+(Both start from 0)
+
+--------------------------------------------------
+
+3. Declaration of 2D Array
+
+(i) Declaration only
+int[][] arr;
+
+(ii) Declaration with size
+int[][] arr = new int[3][4];
+3 → number of rows
+4 → number of columns
+
+(iii) Declaration and Initialization
+int[][] arr = {
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+};
+
+--------------------------------------------------
+
+4. Example
+
+int[][] arr = {
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+};
+
+Matrix view:
+
+       0   1   2
+
+0      1   2   3
+
+1      4   5   6
+
+2      7   8   9
+
+
+arr[1][2] = 6
+arr[2][0] = 7
+
+--------------------------------------------------
+
+5. Input in 2D Array
+
+Scanner sc = new Scanner(System.in);
+
+int r, c;
+
+System.out.print("Enter rows: ");
+r = sc.nextInt();
+
+System.out.print("Enter columns: ");
+c = sc.nextInt();
+
+int[][] arr = new int[r][c];
+
+// Input elements
+
+for (int i = 0; i < r; i++) {
+
+    for (int j = 0; j < c; j++) {
+
+        System.out.print(
+            "Enter arr["+i+"]["+j+"]: "
+        );
+
+        arr[i][j] = sc.nextInt();
+    }
+}
+
+--------------------------------------------------
+
+6. Output / Display 2D Array
+
+for(int i = 0; i < r; i++) {
+
+    for(int j = 0; j < c; j++) {
+
+        System.out.print(arr[i][j] + " ");
+
+    }
+
+    System.out.println();    // new line
+}
+
+
+Example Output:
+
+1    2    3
+4    5    6
+7    8    9
+
+--------------------------------------------------
+
+7. Jagged 2D Array
+
+Rows can have different number
+of columns.
+
+Example:
+
+int[][] jagged = new int[3][];
+
+jagged[0] = new int[2];    // 2 elements
+jagged[1] = new int[3];    // 3 elements
+jagged[2] = new int[1];    // 1 element
+
+
+Diagram:
+
+0       10    20
+
+1       30    40    50
+
+2       60
+
+--------------------------------------------------
+
+8. Common Operations
+
+• Traverse / Display
+• Sum of all elements
+• Find maximum / minimum element
+• Search an element
+• Transpose of a matrix
+• Addition of two matrices
+• Multiplication of two matrices
+
+--------------------------------------------------
+
+9. Transpose of a Matrix
+
+Original Matrix (3x3):
+
+1   2   3
+4   5   6
+7   8   9
+
+Transpose:
+
+1   4   7
+2   5   8
+3   6   9
+
+int[][] t = new int[c][r];    // transpose matrix
+
+for(int i = 0; i < r; i++) {
+
+    for(int j = 0; j < c; j++) {
+
+        t[j][i] = arr[i][j];
+
+    }
+}
+
+--------------------------------------------------
+
+10. Important Points
+
+★ In 2D arrays, index starts from 0.
+★ Total number of elements = rows × columns.
+★ Memory is stored in row-major order.
+★ Array index out of bound will throw ArrayIndexOutOfBoundsException.
+★ For non-rectangular (jagged) arrays,each row can have different size.
+
+--------------------------------------------------
+
+SUMMARY
+
+★ 2D Array = collection of 1D arrays.
+★ Access element using array[row][column].
+★ Useful for storing data in table form.
+★ Widely used in matrices, games, tables, etc.
