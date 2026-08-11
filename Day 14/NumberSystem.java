@@ -73,11 +73,29 @@ public class NumberSystem {
     }
 
     public static void findMaximum() {
+        int max = numbers[0][0];
 
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[0].length; j++) {
+                if (numbers[i][j] > max) {
+                    max = numbers[i][j];
+                }
+            }
+        }
+        System.out.print("Maximum element in this array " + max);
     }
 
     public static void findMinimum() {
+        int min = numbers[0][0];
 
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[0].length; j++) {
+                if (numbers[i][j] < min) {
+                    min = numbers[i][j];
+                }
+            }
+        }
+        System.out.print("Minimum element in this array " + min);
     }
 
     public static void calculateSum() {
