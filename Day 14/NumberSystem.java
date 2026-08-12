@@ -41,73 +41,191 @@ public class NumberSystem {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public static void displayArray() {
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j < numbers[i].length; j++) {
-                System.out.print(numbers[i][j] + " ");
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[i].length; j++) {
+                    System.out.print(numbers[i][j] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
         }
+        System.out.println();
     }
 
     public static void rowWiseTraversal() {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print("Row " + (i + 1) + " ");
-            for (int j = 0; j < numbers[i].length; j++) {
-                System.out.print(numbers[i][j] + " ");
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.print("Row " + (i + 1) + " ");
+                for (int j = 0; j < numbers[i].length; j++) {
+                    System.out.print(numbers[i][j] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
         }
+        System.out.println();
     }
 
     public static void columnWiseTraversal() {
-        for (int i = 0; i < numbers[0].length; i++) {
-            System.out.print("Column " + (i + 1) + " ");
-            for (int j = 0; j < numbers.length; j++) {
-                System.out.print(numbers[j][i] + " ");
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            for (int i = 0; i < numbers[0].length; i++) {
+                System.out.print("Column " + (i + 1) + " ");
+                for (int j = 0; j < numbers.length; j++) {
+                    System.out.print(numbers[j][i] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
         }
+        System.out.println();
     }
 
     public static void findMaximum() {
-        int max = numbers[0][0];
-
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j < numbers[0].length; j++) {
-                if (numbers[i][j] > max) {
-                    max = numbers[i][j];
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            int max = numbers[0][0];
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[0].length; j++) {
+                    if (numbers[i][j] > max) {
+                        max = numbers[i][j];
+                    }
                 }
             }
+            System.out.print("Maximum element in this array " + max);
         }
-        System.out.print("Maximum element in this array " + max);
+        System.out.println();
     }
 
     public static void findMinimum() {
-        int min = numbers[0][0];
-
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j < numbers[0].length; j++) {
-                if (numbers[i][j] < min) {
-                    min = numbers[i][j];
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            int min = numbers[0][0];
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[0].length; j++) {
+                    if (numbers[i][j] < min) {
+                        min = numbers[i][j];
+                    }
                 }
             }
+            System.out.print("Minimum element in this array " + min);
         }
-        System.out.print("Minimum element in this array " + min);
+        System.out.println();
     }
 
     public static void calculateSum() {
-
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            int sum = 0;
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[0].length; j++) {
+                    sum += numbers[i][j];
+                }
+            }
+            System.out.print("Total sum of this array is " + sum);
+        }
+        System.out.println();
     }
 
     public static void searchElement() {
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            System.out.print("Enter Number to search in this Array ");
+            int kay = sc.nextInt();
+            boolean found = false;
 
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[0].length; j++) {
+                    if (numbers[i][j] == kay) {
+                        System.out.print("Number Found at Row " + i + " Column " + j);
+                        found = true;
+                        break;
+                    }
+                }
+                if (found == true) {
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.print("Number not found ");
+            }
+        }
+        System.out.println();
     }
 
     public static void updateElement() {
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            int choice;
+            do {
+                System.out.println("1.Upadte element with index");
+                System.out.println("2.Update element without index");
+                System.out.println("3. Exit");
+                System.out.print("Enter your choice ");
+                choice = sc.nextInt();
 
+                boolean found = false;
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter Row index number ");
+                        int Ridx = sc.nextInt();
+                        System.out.print("Enter Column index number ");
+                        int Cidx = sc.nextInt();
+
+                        if (Ridx >= 0 && Cidx >= 0 && Ridx < numbers.length && Cidx < numbers[0].length) {
+
+                            System.out.print("Enter new number ");
+                            int newnum = sc.nextInt();
+
+                            numbers[Ridx][Cidx] = newnum;
+                        } else {
+                            System.out.println("Enter valid index number ");
+                        }
+                        break;
+
+                    case 2:
+                        System.out.print("Enter old number ");
+                        int Onum = sc.nextInt();
+                        System.out.print("Enter new number to update ");
+                        int Nnum = sc.nextInt();
+
+                        for (int i = 0; i < numbers.length; i++) {
+                            for (int j = 0; j < numbers[0].length; j++) {
+                                if (numbers[i][j] == Onum) {
+                                    numbers[i][j] = Nnum;
+                                    found = true;
+                                }
+                            }
+                            if (found == true) {
+                                break;
+                            }
+                        }
+
+                        if (!found) {
+                            System.out.println("Number not found ");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Exit....");
+                    default:
+                        System.out.println("Invalid choice ");
+                }
+            } while (choice != 3);
+        }
+        System.out.println();
     }
 
     public static void insertAny() {
