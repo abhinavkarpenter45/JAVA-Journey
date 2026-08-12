@@ -229,15 +229,30 @@ public class NumberSystem {
     }
 
     public static void insertAny() {
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     public static void deleteAny() {
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     public static void transpose() {
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     public static void createJaggedArray() {
@@ -245,11 +260,33 @@ public class NumberSystem {
     }
 
     public static void rowSum() {
-
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            for (int i = 0; i < numbers.length; i++) {
+                int rowSum = 0;
+                for (int j = 0; j < numbers[0].length; j++) {
+                    rowSum += numbers[i][j];
+                }
+                System.out.println("Row " + (i + 1) + " " + rowSum);
+            }
+        }
+        System.out.println();
     }
 
     public static void columnSum() {
-
+        if (numbers == null) {
+            System.out.println("Empty Array ");
+        } else {
+            for (int i = 0; i < numbers[0].length; i++) {
+                int columnSum = 0;
+                for (int j = 0; j < numbers.length; j++) {
+                    columnSum += numbers[j][i];
+                }
+                System.out.println("Column " + (i + 1) + " " + columnSum);
+            }
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
