@@ -250,7 +250,20 @@ public class NumberSystem {
         if (numbers == null) {
             System.out.println("Empty Array ");
         } else {
+            int [][] Transpose = new int[numbers[0].length][numbers.length];
+            for(int i = 0; i < numbers.length; i++){
+                for(int j = 0; j < numbers[0].length; j++){
+                    Transpose[j][i] = numbers[i][j];
+                }
+            }
 
+            System.out.println("Transpose array is ");
+            for(int i = 0; i < Transpose.length; i++){
+                for(int j = 0; j < Transpose[0].length; j++){
+                    System.out.print(Transpose[i][j] + " ");
+                }
+                System.out.println();
+            }
         }
         System.out.println();
     }
