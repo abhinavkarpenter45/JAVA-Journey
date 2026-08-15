@@ -220,6 +220,7 @@ public class NumberSystem {
                         break;
                     case 3:
                         System.out.println("Exit....");
+                        break;
                     default:
                         System.out.println("Invalid choice ");
                 }
@@ -232,7 +233,81 @@ public class NumberSystem {
         if (numbers == null) {
             System.out.println("Empty Array ");
         } else {
+            int choice;
+            do {
+                System.out.println("1. Insert Row ");
+                System.out.println("2. Insert Column ");
+                System.out.println("3 Exit ");
+                System.out.print("Enter your choice ");
+                choice = sc.nextInt();
 
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter Row Index ");
+                        int Ridx = sc.nextInt();
+                        if (0 > Ridx || Ridx > numbers.length) {
+                            System.out.println("Enter valid Row Index ");
+
+                        } else {
+
+                            int[][] newNum = new int[numbers.length + 1][numbers[0].length];
+
+                            for (int i = 0; i < Ridx; i++) {
+                                for (int j = 0; j < numbers[0].length; j++) {
+                                    newNum[i][j] = numbers[i][j];
+                                }
+                            }
+
+                            for (int j = 0; j < newNum[0].length; j++) {
+                                System.out.println("Enter new Row elements ");
+                                newNum[Ridx][j] = sc.nextInt();
+                            }
+
+                            for (int i = Ridx; i < numbers.length; i++) {
+                                for (int j = 0; j < numbers[0].length; j++) {
+                                    newNum[i + 1][j] = numbers[i][j];
+                                }
+                            }
+                            numbers = newNum;
+                        }
+                        break;
+
+                    case 2:
+                        System.out.print("Enter Column Index ");
+                        int Cidx = sc.nextInt();
+
+                        if (Cidx < 0 || Cidx > numbers[0].length) {
+                            System.out.println("Invalid Colunm Index ");
+                        } else {
+                            int[][] newNum = new int[numbers.length][numbers[0].length + 1];
+                            for (int i = 0; i < numbers.length; i++) {
+                                for (int j = 0; j < Cidx; j++) {
+                                    newNum[i][j] = numbers[i][j];
+                                }
+                            }
+
+                            for (int i = 0; i < newNum.length; i++) {
+                                System.out.println("Enter Colunm element ");
+                                newNum[i][Cidx] = sc.nextInt();
+                            }
+
+                            for (int i = 0; i < numbers.length; i++) {
+                                for (int j = Cidx; j < numbers[0].length; j++) {
+                                    newNum[i][j + 1] = numbers[i][j];
+                                }
+                            }
+                            numbers = newNum;
+                        }
+                        break;
+
+                    case 3:
+                        System.out.println("Exiting...");
+                        break;
+
+                    default:
+                        System.out.println("Invalid Choice ");
+                }
+            } while (choice != 3);
         }
         System.out.println();
     }
@@ -241,7 +316,71 @@ public class NumberSystem {
         if (numbers == null) {
             System.out.println("Empty Array ");
         } else {
+            int choice;
+            do {
+                System.out.println("1. Delete Row ");
+                System.out.println("2. Delete Column");
+                System.out.println("3. Exit");
+                System.out.println("Enter your Choice ");
+                choice = sc.nextInt();
 
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter Row Index ");
+                        int Ridx = sc.nextInt();
+                        if (Ridx < 0 || Ridx >= numbers.length) {
+                            System.out.println("Invalid Row Index ");
+                        } else {
+                            int[][] newNum = new int[numbers.length - 1][numbers[0].length];
+
+                            for (int i = 0; i < Ridx; i++) {
+                                for (int j = 0; j < numbers[0].length; j++) {
+                                    newNum[i][j] = numbers[i][j];
+                                }
+                            }
+
+                            for (int i = Ridx; i < numbers.length; i++) {
+                                for (int j = 0; j < numbers[0].length; j++) {
+                                    newNum[i - 1][j] = numbers[i][j];
+                                }
+                            }
+                            numbers = newNum;
+                        }
+                        break;
+
+                    case 2:
+                        System.out.println("Enter Column Index ");
+                        int Cidx = sc.nextInt();
+
+                        if (Cidx < 0 || Cidx >= numbers[0].length) {
+                            System.out.println("Invalid Index ");
+                        } else {
+
+                            int[][] newNum = new int[numbers.length][numbers[0].length - 1];
+
+                            for (int i = 0; i < numbers.length; i++) {
+                                for (int j = 0; j < Cidx; j++) {
+                                    newNum[i][j] = numbers[i][j];
+                                }
+                            }
+
+                            for (int i = 0; i < numbers.length; i++) {
+                                for (int j = Cidx; j < numbers[0].length; j++) {
+                                    newNum[i][j - 1] = numbers[i][j];
+                                }
+                            }
+                            numbers = newNum;
+                        }
+                        break;
+
+                    case 3:
+                        System.out.println("Exiting...");
+                        break;
+
+                    default:
+                        System.out.println("Invalid choice ");
+                }
+            } while (choice != 3);
         }
         System.out.println();
     }
@@ -250,16 +389,16 @@ public class NumberSystem {
         if (numbers == null) {
             System.out.println("Empty Array ");
         } else {
-            int [][] Transpose = new int[numbers[0].length][numbers.length];
-            for(int i = 0; i < numbers.length; i++){
-                for(int j = 0; j < numbers[0].length; j++){
+            int[][] Transpose = new int[numbers[0].length][numbers.length];
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = 0; j < numbers[0].length; j++) {
                     Transpose[j][i] = numbers[i][j];
                 }
             }
 
             System.out.println("Transpose array is ");
-            for(int i = 0; i < Transpose.length; i++){
-                for(int j = 0; j < Transpose[0].length; j++){
+            for (int i = 0; i < Transpose.length; i++) {
+                for (int j = 0; j < Transpose[0].length; j++) {
                     System.out.print(Transpose[i][j] + " ");
                 }
                 System.out.println();
@@ -269,7 +408,24 @@ public class NumberSystem {
     }
 
     public static void createJaggedArray() {
+        System.out.print("Enter Row Size ");
+        int r = sc.nextInt();
 
+        int[][] jagged = new int[r][];
+
+        for (int i = 0; i < r; i++) {
+            System.out.println("Enter Column size for row " + i + " ");
+            int c = sc.nextInt();
+            jagged[i] = new int[c];
+        }
+
+        for (int i = 0; i < jagged.length; i++) {
+            for (int j = 0; j < jagged[i].length; j++) {
+                System.out.println("Enter element [" + i + "] [" + j + "]");
+                jagged[i][j] = sc.nextInt();
+            }
+        }
+        numbers = jagged;
     }
 
     public static void rowSum() {
