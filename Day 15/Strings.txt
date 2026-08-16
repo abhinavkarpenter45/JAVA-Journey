@@ -1,0 +1,138 @@
+========================================
+          STRINGS IN JAVA
+========================================
+
+1. What is String ?
+• String is a sequence of characters.
+• In Java, String is an object of
+  class String which is present in
+  java.lang package.
+
+Example:
+String s1 = "Hello";
+String s2 = new String("World");
+
+--------------------------------------------------
+
+2. Ways to Create String
+
+(i) Using String Literal
+String s = "Java";
+(Stored in String Constant Pool)
+
+(ii) Using new Keyword
+String s = new String("Java");
+(Stored in Heap)
+
+--------------------------------------------------
+
+3. String Immutable
+
+• String objects are immutable
+  (cannot be changed).
+
+• Any operation that seems to
+  modify a string actually creates
+  a new string.
+
+
+Example:
+String s = "Hello";
+s.concat(" World");       // new string
+System.out.println(s);    // Hello
+
+--------------------------------------------------
+
+4. Commonly Used String Methods
+
+| No. | Method                                    | Description                                      | Syntax                              | Example                                                            | Output           |
+| --: | ----------------------------------------- | ------------------------------------------------ | ----------------------------------- | ------------------------------------------------------------------ | ---------------- |
+|   1 | `length()`                                | Returns length of string.                        | `s.length()`                        | `String s = "Hello";`<br>`s.length();`                             | `5`              |
+|   2 | `charAt(int index)`                       | Returns character at given index.                | `s.charAt(index)`                   | `String s = "Hello";`<br>`s.charAt(1);`                            | `'e'`            |
+|   3 | `substring(int beginIndex)`               | Returns substring from beginIndex to end.        | `s.substring(beginIndex)`           | `String s = "Hello";`<br>`s.substring(1);`                         | `"ello"`         |
+|   4 | `substring(int beginIndex, int endIndex)` | Returns substring from beginIndex to endIndex-1. | `s.substring(beginIndex, endIndex)` | `String s = "Hello";`<br>`s.substring(1,4);`                       | `"ell"`          |
+|   5 | `toLowerCase()`                           | Converts string to lowercase.                    | `s.toLowerCase()`                   | `String s = "HELLO";`<br>`s.toLowerCase();`                        | `"hello"`        |
+|   6 | `toUpperCase()`                           | Converts string to uppercase.                    | `s.toUpperCase()`                   | `String s = "hello";`<br>`s.toUpperCase();`                        | `"HELLO"`        |
+|   7 | `equals(Object obj)`                      | Checks content equality (case sensitive).        | `s.equals(obj)`                     | `String s1 = "Java";`<br>`String s2 = "Java";`<br>`s1.equals(s2);` | `true`           |
+|   8 | `equalsIgnoreCase(String str)`            | Checks equality ignoring case.                   | `s.equalsIgnoreCase(str)`           | `"java".equalsIgnoreCase("JAVA");`                                 | `true`           |
+|   9 | `compareTo(String str)`                   | Lexicographically compares two strings.          | `s.compareTo(str)`                  | `"apple".compareTo("banana");`                                     | `negative value` |
+|  10 | `contains(CharSequence seq)`              | Checks if string contains given sequence.        | `s.contains(seq)`                   | `String s = "Hello World";`<br>`s.contains("World");`              | `true`           |
+|  11 | `startsWith(String prefix)`               | Checks if string starts with given prefix.       | `s.startsWith(prefix)`              | `"Hello".startsWith("He");`                                        | `true`           |
+|  12 | `endsWith(String suffix)`                 | Checks if string ends with given suffix.         | `s.endsWith(suffix)`                | `"Hello".endsWith("lo");`                                          | `true`           |
+|  13 | `indexOf(int ch)`                         | Returns index of first occurrence of character.  | `s.indexOf(ch)`                     | `String s = "Hello";`<br>`s.indexOf('l');`                         | `2`              |
+|  14 | `lastIndexOf(int ch)`                     | Returns index of last occurrence of character.   | `s.lastIndexOf(ch)`                 | `String s = "Hello";`<br>`s.lastIndexOf('l');`                     | `3`              |
+|  15 | `replace(char old, char new)`             | Replaces all occurrences of old with new.        | `s.replace(old, new)`               | `"banana".replace('a','o');`                                       | `"bonono"`       |
+|  16 | `trim()`                                  | Removes leading and trailing spaces.             | `s.trim()`                          | `String s = "  Java  ";`<br>`s.trim();`                            | `"Java"`         |
+
+     --------------------------------------------------
+
+5. String Concatenation
+
+• Using + operator
+String s = "Hello" + "Java";    // Hello Java
+
+• Using concat() method
+String s = "Hello".concat("Java");    // Hello Java
+
+
+--------------------------------------------------
+
+6. String vs StringBuilder
+
+| Feature        | String                                  | StringBuilder                 |
+| -------------- | --------------------------------------- | ----------------------------- |
+| **Mutability** | Immutable (cannot be changed)           | Mutable (can be changed)      |
+| **Speed**      | Slower (creates new object for changes) | Faster (modifies same object) |
+| **Storage**    | Stored in String Constant Pool          | Stored in Heap                |
+| **Use When**   | Data is not modified frequently         | Data is modified frequently   |
+
+--------------------------------------------------
+
+7. Important Points
+
+• String index starts from 0.
+• Strings in Java are immutable.
+• Use equals() for content comparison, not ==.
+• String is case sensitive.
+• length() of empty string is 0.
+
+Empty String
+String s1 = "";          // length = 0
+String s2 = new String();    // ""
+
+--------------------------------------------------
+
+8. Escape Sequences in String
+
+\n    → New Line
+\t    → Horizontal Tab
+\"    → Double Quote
+\'    → Single Quote
+\\    → Backslash
+\r    → Carriage Return
+\b    → Backspace
+\f    → Form Feed
+
+--------------------------------------------------
+
+9. Example Program
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String s = "Java Programming";
+
+        System.out.println(s.length());       
+        // 16
+
+        System.out.println(s.substring(5));   
+        // Programming
+
+        System.out.println(s.toUpperCase());  
+        // JAVA PROGRAMMING
+
+        System.out.println(s.contains("Pro")); 
+        // true
+    }
+}
