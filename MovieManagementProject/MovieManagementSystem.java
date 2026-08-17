@@ -5,10 +5,12 @@ class MovieManagement {
     static String[] movieNames;
     static int[] ratings;
     static String[] genres;
+    static int count;
 
     void movieMenu() {
         int choice;
         do {
+            System.out.println();
             System.out.println("========== MOVIE MANAGEMENT ==========");
             System.out.println("1. Enter Movies");
             System.out.println("2. Display Movies");
@@ -21,6 +23,7 @@ class MovieManagement {
             System.out.println("9. Calculate Average Rating");
             System.out.println("10. Count Total Movies");
             System.out.println("11. Back to Main Menu");
+            System.out.println();
 
             System.out.print("Enter your choice ");
             choice = MovieManagementSystem.sc.nextInt();
@@ -67,7 +70,28 @@ class MovieManagement {
     }
 
     void enterMovies() {
+        System.out.print("How many new movies do you want to add? Enter the size: ");
+        int size = MovieManagementSystem.sc.nextInt();
+        MovieManagementSystem.sc.nextLine();
 
+        movieNames = new String[size];
+        ratings = new int[size];
+        genres = new String[size];
+
+        // Input movie, rating and genres
+        for (int i = 0; i < movieNames.length; i++) {
+            System.out.print("Enter Movie name ");
+            movieNames[i] = MovieManagementSystem.sc.nextLine();
+
+            System.out.print("Enter Movie Rating ");
+            ratings[i] = MovieManagementSystem.sc.nextInt();
+            MovieManagementSystem.sc.nextLine();
+
+            System.out.print("Enter Movie genres ");
+            genres[i] = MovieManagementSystem.sc.nextLine();
+
+            System.out.println();
+        }
     }
 
     void displayMovies() {
@@ -115,6 +139,7 @@ class MovieStringAnalysis {
         int choice;
 
         do {
+            System.out.println();
             System.out.println("========== MOVIE STRING ANALYSIS ==========");
             System.out.println("1. Count Characters");
             System.out.println("2. Convert Movie Name to Uppercase");
@@ -127,6 +152,7 @@ class MovieStringAnalysis {
             System.out.println("9. Find Shortest Movie Name");
             System.out.println("10. Compare Two Movie Names");
             System.out.println("11. Back to Main Menu");
+            System.out.println();
 
             System.out.print("Enter your choice ");
             choice = MovieManagementSystem.sc.nextInt();
@@ -237,6 +263,7 @@ class TheatreSeatManagement {
         int choice;
 
         do {
+            System.out.println();
             System.out.println("========== THEATRE SEAT MANAGEMENT ==========");
             System.out.println("1. Enter Theatre Seats");
             System.out.println("2. Display Seats");
@@ -248,6 +275,7 @@ class TheatreSeatManagement {
             System.out.println("8. Row-wise Display");
             System.out.println("9. Column-wise Display");
             System.out.println("10. Back to Main Menu");
+            System.out.println();
 
             System.out.print("Enter your choice ");
             choice = MovieManagementSystem.sc.nextInt();
@@ -355,6 +383,8 @@ public class MovieManagementSystem {
             System.out.println("2. Movie String Analysis");
             System.out.println("3. Theatre Seat Management");
             System.out.println("4. Exit");
+            System.out.println();
+
             System.out.print("Enter Your Choice ");
             choice = sc.nextInt();
             switch (choice) {
@@ -369,6 +399,7 @@ public class MovieManagementSystem {
                     break;
                 case 4:
                     System.out.println("Exiting...");
+                    System.out.println("Thank you ");
                     break;
                 default:
                     System.out.println("Invalid Choice ");
