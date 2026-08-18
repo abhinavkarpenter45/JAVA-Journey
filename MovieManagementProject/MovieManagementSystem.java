@@ -3,9 +3,9 @@ import java.util.Scanner;
 //Class 1 Movie
 class MovieManagement {
     static String[] movieNames;
-    static int[] ratings;
+    static float[] ratings;
     static String[] genres;
-    static int count;
+    static int count = 0;
 
     void movieMenu() {
         int choice;
@@ -27,6 +27,7 @@ class MovieManagement {
 
             System.out.print("Enter your choice ");
             choice = MovieManagementSystem.sc.nextInt();
+            MovieManagementSystem.sc.nextLine();
 
             switch (choice) {
                 case 1:
@@ -75,7 +76,7 @@ class MovieManagement {
         MovieManagementSystem.sc.nextLine();
 
         movieNames = new String[size];
-        ratings = new int[size];
+        ratings = new float[size];
         genres = new String[size];
 
         // Input movie, rating and genres
@@ -84,50 +85,159 @@ class MovieManagement {
             movieNames[i] = MovieManagementSystem.sc.nextLine();
 
             System.out.print("Enter Movie Rating ");
-            ratings[i] = MovieManagementSystem.sc.nextInt();
+            ratings[i] = MovieManagementSystem.sc.nextFloat();
             MovieManagementSystem.sc.nextLine();
 
             System.out.print("Enter Movie genres ");
             genres[i] = MovieManagementSystem.sc.nextLine();
 
+            count++;
             System.out.println();
         }
     }
 
     void displayMovies() {
-
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
+            // Display all details
+            for (int i = 0; i < movieNames.length; i++) {
+                System.out.println((i + 1) + " Movie Name " + movieNames[i]);
+                System.out.println("  Movie Rating " + ratings[i]);
+                System.out.println("  Movie Genres " + genres[i]);
+                System.out.println();
+            }
+        }
     }
 
     void searchMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
+            System.out.print("Enter Movie name to search in this list ");
+            String key = MovieManagementSystem.sc.nextLine();
+            boolean found = false;
 
+            for (int i = 0; i < movieNames.length; i++) {
+                if (movieNames[i].equals(key)) {
+                    System.out.println("Movie Available");
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Movie Not Available");
+            }
+        }
+        System.out.println();
     }
 
     void updateMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
+            System.out.println("Enter old Movie name ");
+            String oldName = MovieManagementSystem.sc.nextLine();
 
+            System.out.println("Enter new Movie name to update ");
+            String newName = MovieManagementSystem.sc.nextLine();
+
+            boolean found = false;
+
+            for (int i = 0; i < movieNames.length; i++) {
+                if (movieNames[i].equals(oldName)) {
+                    movieNames[i] = newName;
+                    System.out.println("Movie Updated Successfully");
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Movie Not Found");
+            }
+        }
+        System.out.println();
     }
 
     void insertMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
+            String[] insertMovie = new String[movieNames.length + 1];
+            float[] insetRating = new float[ratings.length + 1];
+            String[] insetGenres = new String[genres.length + 1];
 
+            for (int i = 0; i < movieNames.length; i++) {
+                insertMovie[i] = movieNames[i];
+                insetRating[i] = ratings[i];
+                insetGenres[i] = genres[i];
+            }
+
+            System.out.print("Enter Movie name ");
+            String newMoive = MovieManagementSystem.sc.nextLine();
+            insertMovie[insertMovie.length - 1] = newMoive;
+
+            System.out.print("Enter Movie rating ");
+            float newRating = MovieManagementSystem.sc.nextFloat();
+            MovieManagementSystem.sc.nextLine();
+            insetRating[insetRating.length - 1] = newRating;
+
+            System.out.print("Enter movie genres ");
+            String newGenres = MovieManagementSystem.sc.nextLine();
+            insetGenres[insetGenres.length - 1] = newGenres;
+
+            movieNames = insertMovie;
+            ratings = insetRating;
+            genres = insetGenres;
+            count++;
+        }
+        System.out.println();
     }
 
     void deleteMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     void findHighestRatedMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     void findLowestRatedMovie() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     void calculateAverageRating() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
 
+        }
+        System.out.println();
     }
 
     void countTotalMovies() {
+        if (movieNames == null) {
+            System.out.println("Empty Movie list ");
+        } else {
 
+        }
+        System.out.println();
     }
 }
 
