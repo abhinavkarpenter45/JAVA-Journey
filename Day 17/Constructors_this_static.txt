@@ -1,0 +1,218 @@
+==================================================
+1. Constructors
+==================================================
+
+• Constructor is a special method that is
+  automatically called when an object is
+  created.
+
+• Name of constructor is same as class name.
+
+• It does not have any return type
+  (not even void).
+
+• It is used to initialize the object.
+
+
+Example:
+
+class Student {
+
+    int rollNo;
+    String name;
+
+    Student() {                  // default constructor
+        rollNo = 0;
+        name = "Unknown";
+    }
+
+    Student(int r, String n) {   // parameterized constructor
+        rollNo = r;
+        name = n;
+    }
+
+    void display() {
+        System.out.println(rollNo + " " + name);
+    }
+}
+
+
+Types of Constructors:
+
+1. Default Constructor (no-arg constructor)
+   - Provided by compiler if we don't write
+     any constructor.
+
+2. Parameterized Constructor
+   - Takes parameters.
+
+3. Copy Constructor (User Defined)
+   - Takes another object of same class
+     as parameter.
+
+
+Example:
+
+Student s1 = new Student();              // default constructor
+
+Student s2 = new Student(101, "Abhinav"); // parameterized constructor
+
+
+s1.display();    // Output: 0 Unknown
+
+s2.display();    // Output: 101 Abhinav
+
+
+==================================================
+2. this Keyword
+==================================================
+
+• this is a reference variable that refers
+  to the current object.
+
+• It can be used to access current class
+  instance variables.
+
+• It is used to invoke current class methods
+  and constructors.
+
+• It is passed as an argument in the method call.
+
+
+Example:
+
+class Student {
+
+    int rollNo;
+    String name;
+
+    Student(int rollNo, String name) {
+
+        this.rollNo = rollNo;
+        // refers to instance variable
+
+        this.name = name;
+        // refers to instance variable
+    }
+
+    void display() {
+
+        System.out.println(
+            "RollNo: " + this.rollNo +
+            ", Name: " + this.name
+        );
+    }
+
+    void setName(String name) {
+
+        this.name = name;
+        // using this
+    }
+}
+
+
+Uses of this:
+
+1. To refer current object
+
+   this.rollNo
+
+
+2. To differentiate between
+   instance variables and parameters
+
+   this.rollNo = rollNo;
+
+
+3. To call current class method
+
+   this.display();
+
+
+4. To call current class constructor
+
+   this(101, "Abhinav");
+   // calls another constructor
+
+
+5. To pass current object as argument
+
+   someMethod(this);
+
+
+==================================================
+3. static Keyword
+==================================================
+
+• static is a keyword in Java.
+
+• It belongs to the class rather than
+  to any specific object.
+
+• We can access static members without
+  creating any object.
+
+• Shared by all objects.
+
+• Memory is allocated only once.
+
+
+Example:
+
+class Counter {
+
+    static int count = 0;       // static variable
+
+    Counter() {
+        count++;
+        // every time object is created
+    }
+
+    static void showCount() {   // static method
+
+        System.out.println("Count = " + count);
+    }
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Counter c1 = new Counter();
+
+        Counter c2 = new Counter();
+
+        Counter.showCount();    // Output: Count = 2
+    }
+}
+
+
+==================================================
+Static can be used with:
+==================================================
+
+1. static variable (class variable)
+
+2. static method (class method)
+
+3. static block
+
+4. static nested class
+
+
+==================================================
+Important Points:
+==================================================
+
+★ static members can be accessed using
+
+  ClassName.memberName
+
+
+★ static methods can access only static
+  members directly.
+
+
+★ static variables retain their value as
+  long as class is loaded in memory.
