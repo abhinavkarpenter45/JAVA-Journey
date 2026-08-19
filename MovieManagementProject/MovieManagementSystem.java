@@ -200,6 +200,56 @@ class MovieManagement {
             System.out.println("Empty Movie list ");
         } else {
 
+            System.out.println("Enter Movie name to delete ");
+            String delMovie = MovieManagementSystem.sc.nextLine();
+
+            int idx = -1;
+
+            for (int i = 0; i < movieNames.length; i++) {
+                if (movieNames[i].equals(delMovie)) {
+                    idx = i;
+                    break;
+                }
+            }
+
+            if (idx == -1) {
+                System.out.println("Movie not found ");
+                return;
+            }
+
+            if (count == 1) {
+                movieNames = null;
+                ratings = null;
+                genres = null;
+                count = 0;
+                System.out.println("Movie Deleted Successfully");
+                return;
+            }
+            
+            String[] deleteMovie = new String[movieNames.length - 1];
+            float[] deleteRating = new float[ratings.length - 1];
+            String[] deleteGenres = new String[genres.length - 1];
+
+            int j = 0;
+
+            for (int i = 0; i < movieNames.length; i++) {
+
+                if (i == idx) {
+                    continue;
+                }
+
+                deleteMovie[j] = movieNames[i];
+                deleteRating[j] = ratings[i];
+                deleteGenres[j] = genres[i];
+
+                j++;
+            }
+
+            movieNames = deleteMovie;
+            ratings = deleteRating;
+            genres = deleteGenres;
+            count--;
+            System.out.println("Movie Deleted Successfully");
         }
         System.out.println();
     }
