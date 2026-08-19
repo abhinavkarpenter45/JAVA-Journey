@@ -1,0 +1,188 @@
+==================================================
+1. What is Encapsulation ?
+==================================================
+
+• Encapsulation is the process of wrapping
+  data (variables) and code (methods)
+  together into a single unit i.e. class.
+
+• It hides the internal state of an object
+  and only shows necessary details to
+  the outside world.
+
+• It is used to achieve data hiding
+  and security.
+
+
+Example :
+
+A capsule is a real-life example of
+encapsulation. The medicine inside is
+hidden and protected. We can use it
+only in a proper way.
+
+
+==================================================
+2. Why Encapsulation ?
+==================================================
+
+• It protects data from outside access.
+
+• It provides better control over data.
+
+• It increases code reusability and
+  maintainability.
+
+• It makes the code more flexible and
+  easy to modify.
+
+
+==================================================
+3. How Encapsulation is Achieved ?
+==================================================
+
+Encapsulation is achieved by using:
+
+1. private variables (data hiding)
+
+2. public getter and setter methods
+   (accessors and mutators)
+
+
+Class
+│
+├── Private Data (variables)
+│   ├── name
+│   └── age
+│
+└── Public Methods
+    ├── setName()
+    ├── getName()
+    ├── setAge()
+    └── getAge()
+
+
+Private Data
+→ hidden from outside world
+
+Public Methods
+→ accessible to outside world
+
+
+==================================================
+4. Example Program :
+==================================================
+
+class Student {
+
+    private String name;    // private variable
+    private int age;        // private variable
+
+
+    // setter methods (mutators)
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    // getter methods (accessors)
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        s1.setName("Abhinav");    // setting values
+        s1.setAge(20);
+
+        System.out.println(
+            "Name: " + s1.getName()
+        );
+
+        System.out.println(
+            "Age: " + s1.getAge()
+        );
+    }
+}
+
+
+==================================================
+5. Output :
+==================================================
+
+Name: Abhinav
+Age: 20
+
+
+==================================================
+6. Key Points :
+==================================================
+
+★ Private variables cannot be accessed
+  directly from outside the class.
+
+★ We access and modify data only through
+  public methods.
+
+★ This is called data hiding.
+
+★ Encapsulation improves security
+  and control.
+
+★ It is a fundamental concept of OOP.
+
+
+==================================================
+7. Without Encapsulation
+   (Not Recommended)
+==================================================
+
+class Student {
+
+    String name;    // public variable
+    int age;        // public variable
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        s1.name = "Abhinav";    // direct access
+
+        s1.age = -5;            // invalid value also set
+
+        System.out.println(
+            s1.name + " " + s1.age
+        );
+    }
+}
+
+
+==================================================
+Disadvantages :
+==================================================
+
+• Data can be accessed directly.
+
+• Invalid or unwanted data can be set.
+
+• Code is less secure and less maintainable.

@@ -1,0 +1,83 @@
+==================================================
+1. What are Access Modifiers ?
+==================================================
+
+• Access modifiers are used to set the
+  accessibility (visibility) of classes, variables,
+  methods and constructors.
+
+• They control from where the members
+  of a class can be accessed.
+
+
+==================================================
+2. Types of Access Modifiers :
+==================================================
+
+1. private
+   → within the class only
+
+2. default (no keyword)
+   → within the package
+
+3. protected
+   → within the package and
+     outside the package through inheritance
+
+4. public
+   → anywhere (within the program)
+
+
+==================================================
+3. Access Level :
+==================================================
+
+| Modifier  | Same Class | Same Package      | Subclass in       | Other Class in    | Description |
+|           |            | (Non-Subclass)    | Other Package     | Other Package     |             |
+|-----------|------------|-------------------|-------------------|-------------------|-------------|
+| private   | Yes        | No                | No                | No                | Accessible only within the same class. |
+| default   | Yes        | Yes               | No                | No                | Accessible within the same package only. |
+| (no       |            |                   |                   |                   |             |
+| keyword)  |            |                   |                   |                   |             |
+| protected | Yes        | Yes               | Yes               | No                | Accessible within the package and in subclasses (even if in other package). |
+| public    | Yes        | Yes               | Yes               | Yes               | Accessible everywhere. |
+
+
+==================================================
+4. Example :
+==================================================
+
+class Student {
+
+    private int rollNo;
+    // accessible only in this class
+
+    int name;
+    // default - accessible in same package
+
+    protected int age;
+    // accessible in package + subclass
+
+    public String college;
+    // accessible everywhere
+}
+
+
+==================================================
+5. Key Points :
+==================================================
+
+• If no modifier is specified,
+  it is default.
+
+• We cannot apply more than one modifier
+  to a member.
+
+• Top-level class can be either
+  public or default.
+
+• Inner class can be private, default,
+  protected or public.
+
+• Access modifiers are not applicable
+  on local variables.
