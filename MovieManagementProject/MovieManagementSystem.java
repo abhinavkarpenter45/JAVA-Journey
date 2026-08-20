@@ -225,7 +225,7 @@ class MovieManagement {
                 System.out.println("Movie Deleted Successfully");
                 return;
             }
-            
+
             String[] deleteMovie = new String[movieNames.length - 1];
             float[] deleteRating = new float[ratings.length - 1];
             String[] deleteGenres = new String[genres.length - 1];
@@ -258,6 +258,20 @@ class MovieManagement {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
         } else {
+            float highRating = ratings[0];
+            String highMovie = movieNames[0];
+            String highGenres = genres[0];
+
+            for (int i = 0; i < ratings.length; i++) {
+                if (highRating < ratings[i]) {
+                    highRating = ratings[i];
+                    highMovie = movieNames[i];
+                    highGenres = genres[i];
+                }
+            }
+            System.out.println("Highest Rating Movie name is " + highMovie);
+            System.out.println("Rating is " + highRating);
+            System.out.println("Genres is " + highGenres);
 
         }
         System.out.println();
@@ -267,7 +281,20 @@ class MovieManagement {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
         } else {
+            float lowRating = ratings[0];
+            String lowMovie = movieNames[0];
+            String lowGenres = genres[0];
 
+            for (int i = 0; i < ratings.length; i++) {
+                if (lowRating > ratings[i]) {
+                    lowRating = ratings[i];
+                    lowMovie = movieNames[i];
+                    lowGenres = genres[i];
+                }
+            }
+            System.out.println("Highest Rating Movie name is " + lowMovie);
+            System.out.println("Rating is " + lowRating);
+            System.out.println("Genres is " + lowGenres);
         }
         System.out.println();
     }
@@ -276,7 +303,15 @@ class MovieManagement {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
         } else {
+            float sum = 0;
 
+            for (int i = 0; i < ratings.length; i++) {
+                sum += ratings[i];
+            }
+
+            float avg = sum / count;
+
+            System.out.println("Average Rating is " + avg);
         }
         System.out.println();
     }
@@ -285,7 +320,7 @@ class MovieManagement {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
         } else {
-
+            System.out.println("Total Movie in this list is " + count);
         }
         System.out.println();
     }
