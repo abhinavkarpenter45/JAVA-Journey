@@ -9,7 +9,6 @@
 • They control from where the members
   of a class can be accessed.
 
-
 ==================================================
 2. Types of Access Modifiers :
 ==================================================
@@ -27,7 +26,6 @@
 4. public
    → anywhere (within the program)
 
-
 ==================================================
 3. Access Level :
 ==================================================
@@ -41,7 +39,6 @@
 | keyword)  |            |                   |                   |                   |             |
 | protected | Yes        | Yes               | Yes               | No                | Accessible within the package and in subclasses (even if in other package). |
 | public    | Yes        | Yes               | Yes               | Yes               | Accessible everywhere. |
-
 
 ==================================================
 4. Example :
@@ -61,7 +58,6 @@ class Student {
     public String college;
     // accessible everywhere
 }
-
 
 ==================================================
 5. Key Points :

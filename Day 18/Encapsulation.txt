@@ -13,14 +13,12 @@
 • It is used to achieve data hiding
   and security.
 
-
 Example :
 
 A capsule is a real-life example of
 encapsulation. The medicine inside is
 hidden and protected. We can use it
 only in a proper way.
-
 
 ==================================================
 2. Why Encapsulation ?
@@ -36,7 +34,6 @@ only in a proper way.
 • It makes the code more flexible and
   easy to modify.
 
-
 ==================================================
 3. How Encapsulation is Achieved ?
 ==================================================
@@ -47,7 +44,6 @@ Encapsulation is achieved by using:
 
 2. public getter and setter methods
    (accessors and mutators)
-
 
 Class
 │
@@ -67,7 +63,6 @@ Private Data
 
 Public Methods
 → accessible to outside world
-
 
 ==================================================
 4. Example Program :
@@ -121,14 +116,12 @@ public class Main {
     }
 }
 
-
 ==================================================
 5. Output :
 ==================================================
 
 Name: Abhinav
 Age: 20
-
 
 ==================================================
 6. Key Points :
@@ -146,7 +139,6 @@ Age: 20
   and control.
 
 ★ It is a fundamental concept of OOP.
-
 
 ==================================================
 7. Without Encapsulation
@@ -175,7 +167,6 @@ public class Main {
         );
     }
 }
-
 
 ==================================================
 Disadvantages :
