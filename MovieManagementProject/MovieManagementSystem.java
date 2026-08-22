@@ -334,7 +334,9 @@ class MovieManagement {
 // ======================================================
 class TheatreSeatManagement {
 
-    static int[][] seats;
+    MovieManagement movie = new MovieManagement();
+
+    static int[][] seats = new int[10][15];
 
     void seatMenu() {
 
@@ -344,14 +346,14 @@ class TheatreSeatManagement {
             System.out.println();
             System.out.println("========== THEATRE SEAT MANAGEMENT ==========");
             System.out.println("1. Enter Theatre Seats");
-            System.out.println("2. Display Seats");
-            System.out.println("3. Book Seat");
-            System.out.println("4. Cancel Seat");
-            System.out.println("5. Check Seat");
-            System.out.println("6. Count Booked Seats");
-            System.out.println("7. Count Available Seats");
-            System.out.println("8. Row-wise Display");
-            System.out.println("9. Column-wise Display");
+            System.out.println("2. Avaiable Movie List ");
+            System.out.println("3. Search Movie ");
+            System.out.println("4. Display Seats");
+            System.out.println("5. Book Seat");
+            System.out.println("6. Cancel Seat");
+            System.out.println("7. Check Seat");
+            System.out.println("8. Count Booked Seats");
+            System.out.println("9. Count Available Seats");
             System.out.println("10. Back to Main Menu");
             System.out.println();
 
@@ -365,38 +367,34 @@ class TheatreSeatManagement {
                     break;
 
                 case 2:
-                    displaySeats();
+                    movie.displayMovies();
                     break;
 
                 case 3:
-                    bookSeat();
+                    movie.searchMovie();
                     break;
 
                 case 4:
-                    cancelSeat();
+                    displaySeats();
                     break;
 
                 case 5:
-                    checkSeat();
+                    bookSeat();
                     break;
 
                 case 6:
-                    countBookedSeats();
+                    cancelSeat();
                     break;
 
                 case 7:
-                    countAvailableSeats();
+                    checkSeat();
                     break;
 
                 case 8:
-                    rowWiseDisplay();
+                    countAvailableSeats();
                     break;
 
                 case 9:
-                    columnWiseDisplay();
-                    break;
-
-                case 10:
                     System.out.println("Back To Main Menu");
                     break;
 
@@ -404,7 +402,7 @@ class TheatreSeatManagement {
                     System.out.println("Invalid Choice");
             }
 
-        } while (choice != 10);
+        } while (choice != 9);
 
         System.out.println();
     }
@@ -437,13 +435,6 @@ class TheatreSeatManagement {
 
     }
 
-    void rowWiseDisplay() {
-
-    }
-
-    void columnWiseDisplay() {
-
-    }
 }
 
 // ======================================================
@@ -519,6 +510,10 @@ public class MovieManagementSystem {
 
                 } while (adminchoice != 3);
             }
+
+            // ==================================================
+            // USER
+            // ==================================================
 
             else if (username.equalsIgnoreCase("user")
                     && password.equals(userPassword)) {
