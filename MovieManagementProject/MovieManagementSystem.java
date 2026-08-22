@@ -481,7 +481,7 @@ public class MovieManagementSystem {
             // ==================================================
 
             if (username.equalsIgnoreCase("admin")
-                    && password.equals("admin@123")) {
+                    && password.equals(adminPassword)) {
 
                 int adminchoice;
 
@@ -520,8 +520,8 @@ public class MovieManagementSystem {
                 } while (adminchoice != 3);
             }
 
-            else if (username.equalsIgnoreCase("user") 
-                    && password.equals("user@123")) {
+            else if (username.equalsIgnoreCase("user")
+                    && password.equals(userPassword)) {
 
                 int userChoice;
 
@@ -569,8 +569,7 @@ public class MovieManagementSystem {
                     }
 
                 } while (userChoice != 5);
-            }
-            else{
+            } else {
                 System.out.println("Invalid Username or Password ");
             }
 
