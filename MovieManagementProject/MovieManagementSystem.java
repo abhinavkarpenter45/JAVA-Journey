@@ -345,16 +345,15 @@ class TheatreSeatManagement {
         do {
             System.out.println();
             System.out.println("========== THEATRE SEAT MANAGEMENT ==========");
-            System.out.println("1. Enter Theatre Seats");
-            System.out.println("2. Avaiable Movie List ");
-            System.out.println("3. Search Movie ");
-            System.out.println("4. Display Seats");
-            System.out.println("5. Book Seat");
-            System.out.println("6. Cancel Seat");
-            System.out.println("7. Check Seat");
-            System.out.println("8. Count Booked Seats");
-            System.out.println("9. Count Available Seats");
-            System.out.println("10. Back to Main Menu");
+            System.out.println("1. Avaiable Movie List ");
+            System.out.println("2. Search Movie ");
+            System.out.println("3. Display Seats");
+            System.out.println("4. Book Seat");
+            System.out.println("5. Cancel Seat");
+            System.out.println("6. Check Seat");
+            System.out.println("7. Count Booked Seats");
+            System.out.println("8. Count Available Seats");
+            System.out.println("9. Back to Main Menu");
             System.out.println();
 
             System.out.print("Enter your choice ");
@@ -363,31 +362,31 @@ class TheatreSeatManagement {
             switch (choice) {
 
                 case 1:
-                    enterSeats();
-                    break;
-
-                case 2:
                     movie.displayMovies();
                     break;
 
-                case 3:
+                case 2:
                     movie.searchMovie();
                     break;
 
-                case 4:
+                case 3:
                     displaySeats();
                     break;
 
-                case 5:
+                case 4:
                     bookSeat();
                     break;
 
-                case 6:
+                case 5:
                     cancelSeat();
                     break;
 
-                case 7:
+                case 6:
                     checkSeat();
+                    break;
+
+                case 7:
+                    countBookedSeats();
                     break;
 
                 case 8:
@@ -407,16 +406,48 @@ class TheatreSeatManagement {
         System.out.println();
     }
 
-    void enterSeats() {
-
-    }
-
     void displaySeats() {
-
+        for (int i = 0; i < seats.length; i++) {
+            System.out.print("Row " + (i + 1) + ":");
+            for (int j = 0; j < seats[0].length; j++) {
+                if (seats[i][j] == 0) {
+                    System.out.print(" Seat " + (j + 1) + " Available | ");
+                } else {
+                    System.out.print(" Seat " + (j + 1) + " Booked |");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
     void bookSeat() {
+        System.out.print("Enter Row Number (1 - 10) ");
+        int rNumber = MovieManagementSystem.sc.nextInt();
 
+        System.out.print("Enter Seat Number (1 - 15) ");
+        int sNumber = MovieManagementSystem.sc.nextInt();
+        MovieManagementSystem.sc.nextLine();
+
+        int rowNo = rNumber - 1;
+        int seatNo = sNumber - 1;
+
+        if (seats[rowNo][seatNo] == 0) {
+            System.out.println("Available");
+            System.out.print("Do you want to book this seat? (yes/no) ");
+            String confirm = MovieManagementSystem.sc.nextLine();
+            if (confirm.equalsIgnoreCase("yes")) {
+                System.out.println("Seat " + sNumber + " in Row " + rNumber + " Booked Successfully ");
+                seats[rowNo][seatNo] = 1;
+            } else if (confirm.equalsIgnoreCase("no")) {
+                System.out.println("Booking Cancelled");
+            } else {
+                System.out.println("Invalid Choice ");
+            }
+        } else {
+            System.out.println("Already Booked");
+        }
+        System.out.println();
     }
 
     void cancelSeat() {
@@ -451,8 +482,8 @@ public class MovieManagementSystem {
 
         int mainchoice;
 
-        String adminPassword = "admin@123";
-        String userPassword = "user@123";
+        String adminPassword = "123";
+        String userPassword = "123";
 
         do {
 
