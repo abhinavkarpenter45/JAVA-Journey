@@ -49,7 +49,7 @@ class Student {
     private int rollNo;
     // accessible only in this class
 
-    int name;
+    String name;
     // default - accessible in same package
 
     protected int age;
