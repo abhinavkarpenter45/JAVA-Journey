@@ -1,0 +1,115 @@
+==================================================
+1. What is Inheritance ?
+==================================================
+
+Ans: Inheritance is a mechanism where a new class (child/subclass) acquires the properties 
+and behaviors (fields and methods) of an existing class (parent/superclass).
+It promotes code reusability and establishes an IS-A relationship.
+
+
+==================================================
+2. Key Points
+==================================================
+
+• The class whose members are inherited is called superclass (parent class).
+• The class that inherits is called subclass (child class).
+• The subclass can have its own members in addition to inherited members.
+• Inheritance supports code reusability and extensibility.
+• Java does not support multiple inheritance with classes (but supports it using interfaces).
+
+
+==================================================
+3. Syntax
+==================================================
+
+class Superclass {
+    // fields and methods
+}
+
+class Subclass extends Superclass {
+    // own fields and methods
+}
+
+
+==================================================
+4. Inheritance Diagram
+==================================================
+
+              Animal
+          (Superclass)
+          (Parent class)
+                ↓
+                ↓
+               Dog
+           (Subclass)
+          (Child class)
+          (Derived class)
+
+
+==================================================
+How it Works ?
+==================================================
+
+1. Dog is an Animal (IS-A Relationship).
+2. Dog inherits color and eat() from Animal.
+3. Dog can use inherited members and also define its own members.
+
+
+==================================================
+5. Always Remember
+==================================================
+
+• Use extends keyword to inherit.
+• Private members are not inherited.
+• Constructors are not inherited.
+• Inheritance represents an IS-A relationship.
+
+
+==================================================
+6. Example
+==================================================
+
+// Parent class (Superclass)
+
+class Animal {
+    String color = "Brown";
+
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+
+// Child class (Subclass)
+
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+
+// Main class
+
+public class Main {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();       // inherited method
+        d.bark();      // own method
+
+        System.out.println(d.color);   // inherited field
+    }
+}
+
+
+==================================================
+7. Benefits
+==================================================
+
+• Code Reusability
+• Easy Maintenance
+• Extensibility
+• Better Organization
