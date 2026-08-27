@@ -9,6 +9,9 @@ class MovieManagement {
     static String[] genres;
     static int count = 0;
 
+    // ------------------------------------------------
+    // Method - Movie Management Menu (shows all options)
+    // ------------------------------------------------
     void movieMenu() {
         int choice;
         do {
@@ -72,6 +75,10 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Takes movie name, rating and genre as
+    // input from user and stores them in arrays
+    // ------------------------------------------------
     void enterMovies() {
         System.out.print("How many new movies do you want to add? Enter the size: ");
         int size = MovieManagementSystem.sc.nextInt();
@@ -98,6 +105,10 @@ class MovieManagement {
         }
     }
 
+    // ------------------------------------------------
+    // Method - Displays all movies with their rating
+    // and genre
+    // ------------------------------------------------
     void displayMovies() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -112,6 +123,9 @@ class MovieManagement {
         }
     }
 
+    // ------------------------------------------------
+    // Method - Searches a movie by name in the list
+    // ------------------------------------------------
     void searchMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -135,6 +149,10 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Updates an existing movie name with a
+    // new name entered by user
+    // ------------------------------------------------
     void updateMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -162,6 +180,11 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Inserts a new movie by creating bigger
+    // arrays, copying old data and adding new movie at
+    // the end
+    // ------------------------------------------------
     void insertMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -197,6 +220,11 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Deletes a movie by name, creates smaller
+    // arrays and copies remaining data (skips deleted
+    // index)
+    // ------------------------------------------------
     void deleteMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -256,6 +284,9 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Finds the movie with the highest rating
+    // ------------------------------------------------
     void findHighestRatedMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -279,6 +310,9 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Finds the movie with the lowest rating
+    // ------------------------------------------------
     void findLowestRatedMovie() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -301,6 +335,9 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Calculates average rating of all movies
+    // ------------------------------------------------
     void calculateAverageRating() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -318,6 +355,10 @@ class MovieManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Counts and displays total number of
+    // movies currently in the list
+    // ------------------------------------------------
     void countTotalMovies() {
         if (movieNames == null) {
             System.out.println("Empty Movie list ");
@@ -338,6 +379,10 @@ class TheatreSeatManagement {
 
     static int[][] seats = new int[10][15];
 
+    // ------------------------------------------------
+    // Method - Theatre Seat Management Menu (shows all
+    // options)
+    // ------------------------------------------------
     void seatMenu() {
 
         int choice;
@@ -406,6 +451,10 @@ class TheatreSeatManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Displays all seats row wise, showing
+    // Available / Booked status for each seat
+    // ------------------------------------------------
     void displaySeats() {
         for (int i = 0; i < seats.length; i++) {
             System.out.print("Row " + (i + 1) + ":");
@@ -421,6 +470,10 @@ class TheatreSeatManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Books a seat after taking row and seat
+    // number from user and confirming with yes/no
+    // ------------------------------------------------
     void bookSeat() {
         System.out.print("Enter Row Number (1 - 10) ");
         int rNumber = MovieManagementSystem.sc.nextInt();
@@ -450,18 +503,33 @@ class TheatreSeatManagement {
         System.out.println();
     }
 
+    // ------------------------------------------------
+    // Method - Cancels a booked seat (logic pending)
+    // ------------------------------------------------
     void cancelSeat() {
 
     }
 
+    // ------------------------------------------------
+    // Method - Checks status of a particular seat
+    // (logic pending)
+    // ------------------------------------------------
     void checkSeat() {
 
     }
 
+    // ------------------------------------------------
+    // Method - Counts total booked seats (logic
+    // pending)
+    // ------------------------------------------------
     void countBookedSeats() {
 
     }
 
+    // ------------------------------------------------
+    // Method - Counts total available seats (logic
+    // pending)
+    // ------------------------------------------------
     void countAvailableSeats() {
 
     }
@@ -475,6 +543,11 @@ public class MovieManagementSystem {
 
     static Scanner sc = new Scanner(System.in);
 
+    // ------------------------------------------------
+    // Method - Main entry point. Handles login (admin/
+    // user) and shows respective menus in a loop until
+    // user chooses to exit
+    // ------------------------------------------------
     public static void main(String[] args) {
 
         MovieManagement movie = new MovieManagement();
