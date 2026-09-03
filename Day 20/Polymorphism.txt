@@ -33,7 +33,7 @@ s.draw();   // calls Rectangle's draw()
   time.                            time.
 
 
-
 • Polymorphism allows a reference variable to
   refer to objects of different classes and execute
   the correct method based on the situation.
+  
