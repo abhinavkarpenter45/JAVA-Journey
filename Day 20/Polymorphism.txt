@@ -1,0 +1,39 @@
+==================================================
+Topic - Polymorphism
+==================================================
+
+1. Introduction:
+
+Polymorphism in Java means "one name, many forms". It allows objects of different classes to be treated as objects of a common superclass.
+
+
+Example:
+
+Shape s = new Circle();
+s.draw();   // calls Circle's draw()
+
+
+Shape s = new Rectangle();
+s.draw();   // calls Rectangle's draw()
+
+
+
+==================================================
+2. Types of Polymorphism
+==================================================
+
+1. Compile Time                  2. Run Time
+   Polymorphism                     Polymorphism
+   (Static Binding)                 (Dynamic Binding)
+
+• Achieved by Method             • Achieved by Method
+  Overloading.                     Overriding.
+
+• Resolved at compile            • Resolved at run
+  time.                            time.
+
+
+
+• Polymorphism allows a reference variable to
+  refer to objects of different classes and execute
+  the correct method based on the situation.
