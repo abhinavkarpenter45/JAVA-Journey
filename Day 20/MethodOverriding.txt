@@ -1,0 +1,69 @@
+==================================================
+4. Method Overriding
+==================================================
+
+• In inheritance, subclass provides its own
+  implementation of a method that is already
+  defined in superclass.
+
+• The method to be executed is decided at
+  run time.
+
+
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal Make Sound");
+    }
+}
+
+
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+class Test {
+
+    public static void main(String [] args) {
+
+        Animal a = new Dog();  // Upcasting
+
+        a.sound();  // call Dog sound()
+    }
+}
+
+
+
+Output:
+Dog barks
+
+
+
+"Method is overridden in Dog. Actual object
+Dog decides which method to call at run time."
+
+
+==================================================
+5. Difference between Overloading and Overriding
+==================================================
+
+Feature              Overloading              Overriding
+
+Belong to             Same class               Parent and child class
+
+Method Name           Same                     Same
+
+Parameters            Different                Same
+
+Return Type           Same or different        Same or covariant
+
+Binding                Compile time             Run time
+
+Inheritance            Not required             Required
