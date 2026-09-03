@@ -1,0 +1,31 @@
+==================================================
+3. Method Overloading
+==================================================
+
+• In the same class, multiple methods having the
+  same name but different parameters.
+
+• The method to be executed is decided at compile time.
+
+
+
+Example:
+
+class Demo {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+
+
+Explanation:
+
+The add() method is overloaded.
+JVM decides which method to call at compile time
+based on arguments.
