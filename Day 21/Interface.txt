@@ -2,7 +2,6 @@
 Interface in Java
 ==================================================
 
-
 ==================================================
 1. Introduction
 ==================================================
@@ -30,7 +29,6 @@ interface InterfaceName {
     returnType method2();
     .................
 }
-
 
 
 ==================================================
@@ -65,7 +63,6 @@ interface Animal {
 // Interface
 // with two
 // abstract methods
-
 
 
 Implementation:
