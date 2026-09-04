@@ -1,0 +1,194 @@
+==================================================
+Interface in Java
+==================================================
+
+
+==================================================
+1. Introduction
+==================================================
+
+• An Interface is a blueprint of a class.
+
+• It contains only abstract methods
+  (by default public and abstract).
+
+• It is used to achieve 100% abstraction.
+
+• It cannot have instance variables.
+
+• It is declared using the keyword interface.
+
+• A class implements an interface
+  using the keyword implements.
+
+
+
+Syntax:
+
+interface InterfaceName {
+    returnType method1();
+    returnType method2();
+    .................
+}
+
+
+
+==================================================
+2. Characteristics of Interface
+==================================================
+
+• All methods are public and abstract by default.
+
+• All variables are public, static and final by default.
+
+• It does not have any constructor.
+
+• It cannot be instantiated (no objects).
+
+• It can be implemented by a class using implements.
+
+• It supports multiple inheritance.
+
+
+
+==================================================
+3. Example
+==================================================
+
+interface Animal {
+    void sound();
+    void eat();
+}
+
+
+
+// Interface
+// with two
+// abstract methods
+
+
+
+Implementation:
+
+class Dog implements Animal {
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public void eat() {
+        System.out.println("Dog eats food");
+    }
+}
+
+
+
+Output:
+
+Dog barks
+Dog eats food
+
+
+
+==================================================
+4. Rules
+==================================================
+
+• A class uses the keyword implements to implement
+  an interface.
+
+• A class must provide the body of all methods
+  declared in the interface.
+
+• A class can implement multiple interfaces,
+  separated by comma.
+
+• An interface can extend another interface
+  using extends.
+
+
+
+==================================================
+5. Multiple Interface Example
+==================================================
+
+interface A {
+    void a();
+}
+
+
+interface B {
+    void b();
+}
+
+
+class Test implements A, B {
+
+    public void a() {
+        System.out.println("Method A");
+    }
+
+    public void b() {
+        System.out.println("Method B");
+    }
+}
+
+
+
+Output:
+
+Method A
+Method B
+
+
+
+==================================================
+6. Interface can extend another Interface
+==================================================
+
+interface A {
+    void a();
+}
+
+
+interface B extends A {
+    void b();
+}
+
+
+class Demo implements B {
+
+    public void a() {
+        System.out.println("A method");
+    }
+
+    public void b() {
+        System.out.println("B method");
+    }
+}
+
+
+
+==================================================
+7. Summary
+==================================================
+
+An Interface in Java is a reference type that contains only abstract methods.
+It is used to achieve total abstraction and multiple inheritance.
+A class implements an interface and provides the implementation of its methods.
+
+
+
+==================================================
+8. Advantages
+==================================================
+
+• Achieves total abstraction.
+
+• Supports multiple inheritance.
+
+• Improves code reusability.
+
+• Provides a common standard.
+
+• Enhances flexibility and scalability.
