@@ -1,0 +1,230 @@
+==================================================
+Super and implements in Java
+==================================================
+
+
+==================================================
+1. super Keyword
+==================================================
+
+• The super keyword in Java is a reference variable
+  which is used to refer immediate parent class object.
+
+• It is used to access parent class members
+  (variables, methods and constructors).
+
+• It is used in three cases.
+
+1) super(variable) - to access parent class variables.
+2) super(method()) - to access parent class methods.
+3) super() - to call parent class constructor.
+
+
+
+==================================================
+1) super(variable)
+==================================================
+
+Used to access parent class variable.
+
+class Animal {
+    String type = "Animal";
+}
+
+class Dog extends Animal {
+    String type = "Dog";
+
+    void display() {
+        System.out.println(super.type);  // Animal
+        System.out.println(type);        // Dog
+    }
+}
+
+
+
+Output:
+
+Animal
+Dog
+
+
+
+==================================================
+2) super(method())
+==================================================
+
+Used to call parent class method.
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        super.sound();  // calls parent method
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+Output:
+
+Animal makes sound
+Dog barks
+
+
+
+==================================================
+3) super()
+==================================================
+
+Used to call parent class constructor.
+
+class Animal {
+
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        super();  // calls parent constructor
+        System.out.println("Dog constructor");
+    }
+}
+
+
+
+Output:
+
+Animal constructor
+Dog constructor
+
+
+
+Note: super() is added by compiler automatically
+as the first statement in child class constructor
+if we don't write it.
+
+
+
+==================================================
+2. implements Keyword
+==================================================
+
+• The implements keyword is used by a class
+  to implement an interface.
+
+• It is used to achieve 100% abstraction.
+
+• A class can implement multiple interfaces,
+  separated by comma.
+
+• A class must provide implementation
+  for all abstract methods of the interface.
+
+
+
+Syntax:
+
+class ClassName implements InterfaceName {
+
+    // implement all abstract methods
+}
+
+
+
+Example:
+
+interface Animal {
+
+    void sound();
+    void eat();
+}
+
+class Dog implements Animal {
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public void eat() {
+        System.out.println("Dog eats food");
+    }
+}
+
+
+
+Output:
+
+Dog barks
+Dog eats food
+
+
+
+==================================================
+Multiple Interfaces Example
+==================================================
+
+interface A {
+    void a();
+}
+
+interface B {
+    void b();
+}
+
+class Test implements A, B {
+
+    public void a() {
+        System.out.println("Method A");
+    }
+
+    public void b() {
+        System.out.println("Method B");
+    }
+}
+
+
+
+Output:
+
+Method A
+Method B
+
+
+
+==================================================
+Difference between extends and implements
+==================================================
+
+Feature          extends (Class)             implements (Interface)
+
+Used for         Inheritance                 Implementation
+                 (Class to Class)            (Class to Interface)
+
+Keyword          extends                     implements
+
+No. of parent    One class only              Multiple interfaces
+
+Methods           Inherits methods            Must implement all
+                  (concrete + abstract)       abstract methods
+
+Abstraction       Partial abstraction         100% abstraction
+
+
+
+==================================================
+Summary
+==================================================
+
+super is used to refer parent class members.
+
+implements is used to implement interface.
