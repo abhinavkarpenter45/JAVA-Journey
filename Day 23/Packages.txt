@@ -1,0 +1,187 @@
+==================================================
+Packages in Java
+==================================================
+
+
+==================================================
+1. What is a Package ?
+==================================================
+
+A package in Java is a group of similar
+types of classes, interfaces and sub-packages.
+It helps to organize code and avoid
+naming conflicts.
+
+
+
+==================================================
+2. Why Packages are used ?
+==================================================
+
+• To organize related classes and interfaces.
+
+• To provide better code reusability.
+
+• To avoid naming conflicts.
+
+• To control access and provide security.
+
+• To make code easy to maintain.
+
+
+==================================================
+3. Types of Packages
+==================================================
+
+(i) Built-in (Predefined) Packages
+
+These packages are provided by Java API.
+
+Example: java.lang, java.util, java.io,
+         java.net, java.sql, etc.
+
+
+(ii) User-defined Packages
+
+These packages are created by the programmer.
+
+Example: mypack, college, utils, etc.
+
+
+
+==================================================
+4. How to Create a Package ?
+==================================================
+
+• Use the keyword package.
+
+package mypack;
+
+public class Hello {
+
+    public void show() {
+        System.out.println("Hello from package");
+    }
+}
+
+• Save the file as Hello.java inside folder structure
+  mypack.
+
+
+
+==================================================
+5. Package Hierarchy (folder structure)
+==================================================
+
+                         src
+                    /     |     \
+                   /      |      \
+               mypack   college   utils
+                  |         |        |
+              Hello.java Student.java Helper.java
+
+Here, src is the root folder.
+mypack, college and utils are sub-packages.
+
+
+
+==================================================
+6. Accessing a Package
+==================================================
+
+(i) Using import statement
+
+• To use classes of another package.
+
+package mypack;
+
+public class Hello {
+
+    public void show() {
+        System.out.println("Hello");
+    }
+}
+
+
+import mypack.Hello;  // import single class
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Hello h = new Hello();
+        h.show();
+    }
+}
+
+
+(ii) Using import package.*
+
+• To import all classes of a package.
+
+import mypack.*;  // import all classes
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Hello h = new Hello();
+        h.show();
+    }
+}
+
+
+
+==================================================
+7. Some Important Points
+==================================================
+
+• The package statement must be the first
+  statement in the file.
+
+• The package name should be written in
+  small letters.
+
+• A class can belong to only one package.
+
+• The class file is stored in the corresponding
+  package folder.
+
+• Packages can be nested (sub-packages).
+
+
+
+==================================================
+8. Example : Using Built-in Package
+==================================================
+
+import java.util.Scanner;
+
+public class InputExample {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
+    }
+}
+
+
+
+// Using class Scanner from
+// java.util package
+
+
+
+==================================================
+9. Summary
+==================================================
+
+A package is a collection of related classes and interfaces.
+It helps in organizing code, improving reusability, avoiding naming conflicts
+and providing security.
