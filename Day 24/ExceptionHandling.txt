@@ -1,0 +1,166 @@
+==================================================
+Exception Handling in Java
+==================================================
+
+
+==================================================
+1. Introduction
+==================================================
+
+• An exception is an unwanted or unexpected event that occurs during the execution of a program.
+• Exception Handling is a mechanism to handle runtime errors so that the normal flow of the application can be maintained.
+• It helps to provide a graceful termination instead of abnormal termination.
+
+
+==================================================
+2. Why Exception Handling ?
+==================================================
+
+• Prevents abnormal program termination.
+• Provides meaningful error messages.
+• Helps in debugging the code.
+• Improves the reliability and maintainability of the application.
+• Separates error-handling code from normal code.
+
+
+==================================================
+3. Types of Exceptions
+==================================================
+
+                         Exceptions
+                            |
+             ______________|______________
+            |                             |
+    Checked Exceptions          Unchecked Exceptions
+
+• Checked at compile time.
+• Must be handled using try-catch or declared using throws.
+• Example: IOException, SQLException, ClassNotFoundException
+
+• Checked at runtime.
+• Not mandatory to handle.
+• Occurs due to programming errors (logic mistakes).
+• Example: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException
+
+
+==================================================
+4. Keywords
+==================================================
+
+Keyword       Description
+
+try           Contains the code that may throw an exception.
+
+catch         Handles the exception.
+
+finally       Contains the code that always executes
+              (whether exception occurs or not).
+
+throw         Used to explicitly throw an exception object.
+
+throws        Used in method signature to declare
+              that a method may throw exceptions.
+
+
+==================================================
+5. Syntax
+==================================================
+
+try {
+    // risky code
+} catch (ExceptionType e) {
+    // handling code
+} finally {
+    // optional code (always executes)
+}
+
+
+==================================================
+6. Example 1 : Handling ArithmeticException
+==================================================
+
+public class Demo {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int c = a / b;   // may throw exception
+            System.out.println(c);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        }
+    }
+}
+
+Output:
+Cannot divide by zero!
+
+
+==================================================
+7. Example 2 : Multiple catch Blocks
+==================================================
+
+public class Test {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[5]);   // ArrayIndexOutOfBoundsException
+            String s = null;
+            System.out.println(s.length());   // NullPointerException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index is out of bounds!");
+        } catch (NullPointerException e) {
+            System.out.println("String is null!");
+        }
+    }
+}
+
+
+==================================================
+8. Example 3 : finally Block
+==================================================
+
+public class FinallyDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10, b = 0;
+            int c = a / b;
+            System.out.println(c);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception occurred");
+        } finally {
+            System.out.println("This block always executes");
+        }
+    }
+}
+
+Output:
+Exception occurred
+This block always executes
+
+
+==================================================
+9. throw and throws
+==================================================
+
+                    throw                    throws
+
+• Used to explicitly throw        • Used to declare that a method
+  an exception object.              may throw an exception.
+• Used inside a method.           • Used in method signature.
+• Example:                        • Example:
+
+throw new ArithmeticException(    public void readFile()
+    "Invalid operation");             throws IOException {
+                                         // code
+                                     }
+
+
+==================================================
+10. Summary
+==================================================
+
+• Exception handling helps in handling runtime errors.
+• It uses try, catch, finally, throw and throws.
+• It improves the robustness and maintainability of the program.
+• Both checked and unchecked exceptions can be handled using this mechanism.
