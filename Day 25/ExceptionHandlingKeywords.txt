@@ -1,0 +1,178 @@
+==================================================
+try, catch, finally, throw and throws in Java
+==================================================
+
+
+==================================================
+1. try block
+==================================================
+
+• The try block contains the code that may
+  throw an exception.
+• If an exception occurs, the rest of the code
+  in the try block is skipped and the control
+  goes to the matching catch block.
+
+Syntax:
+
+try {
+    // risky code
+}
+
+Example:
+
+try {
+    int a = 10, b = 0;
+    int c = a / b;   // may throw exception
+    System.out.println(c);
+}
+
+
+==================================================
+2. catch block
+==================================================
+
+• The catch block handles the exception.
+• It contains the code that will run when an exception occurs in the try block.
+• You can have multiple catch blocks to handle different types of exceptions.
+
+Syntax:
+
+try {
+    // risky code
+} catch (ExceptionType e) {
+    // handling code
+}
+
+Example:
+
+try {
+    int a = 10, b = 0;
+    int c = a / b;
+    System.out.println(c);
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero!");
+}
+
+
+==================================================
+3. finally block
+==================================================
+
+• The finally block always executes whether an exception occurs or not.
+• It is usually used to release resources like closing files, database connections, etc.
+
+Syntax:
+
+try {
+    // risky code
+} catch (ExceptionType e) {
+    // handling code
+} finally {
+    // code that always executes
+}
+
+Example:
+
+try {
+    int a = 10, b = 0;
+    int c = a / b;
+    System.out.println(c);
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero!");
+} finally {
+    System.out.println("This block always executes");
+}
+
+
+==================================================
+4. throw keyword
+==================================================
+
+• The throw keyword is used to explicitly
+  throw an exception.
+• It is used inside a method or block.
+
+Syntax:
+
+throw new ExceptionType("message");
+
+Example:
+
+public class Demo {
+    public static void checkAge(int age) {
+        if (age < 18) {
+            throw new ArithmeticException(
+                "Age must be 18 or above");
+        } else {
+            System.out.println("Valid age");
+        }
+    }
+}
+
+
+==================================================
+5. throws keyword
+==================================================
+
+• The throws keyword is used to declare that a method may throw an exception.
+• It is used in the method signature.
+• It does not handle the exception, it just tells the caller that this method can throw an exception.
+
+Syntax:
+
+returnType methodName() throws ExceptionType {
+    // method code
+}
+
+Example:
+
+public class Demo {
+    public static void divide(int a, int b)
+        throws ArithmeticException {
+
+        int c = a / b;
+        System.out.println(c);
+    }
+
+    public static void main(String[] args) {
+        divide(10, 0);   // must be handled using try-catch
+    }
+}
+
+
+==================================================
+6. Combined Example (try, catch, finally, throw, throws)
+==================================================
+
+public class Test {
+
+    public static void check(int age) throws Exception {
+        if (age < 18) {
+            throw new Exception("Not a valid age");
+        } else {
+            System.out.println("Age is valid");
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            check(15);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed.");
+        }
+    }
+}
+
+
+==================================================
+7. Key Points
+==================================================
+
+• try → contains risky code.
+• catch → handles the exception.
+• finally → always executes.
+• throw → used to explicitly throw an exception.
+• throws → used to declare that a method may throw an exception.
