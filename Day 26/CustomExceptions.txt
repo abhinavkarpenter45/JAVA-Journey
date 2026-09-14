@@ -1,0 +1,135 @@
+==================================================
+Custom Exceptions in Java
+==================================================
+
+
+==================================================
+1. Introduction
+==================================================
+
+• In Java, we can create our own exceptions according to our requirements. These are called Custom Exceptions or User-Defined Exceptions.
+• Custom exceptions are used to handle application-specific errors.
+• We create a custom exception class by extending the Exception class or RuntimeException class.
+
+
+==================================================
+2. Syntax
+==================================================
+
+class MyException extends Exception {
+
+    // constructors
+
+    public MyException() {
+        super();
+    }
+
+    public MyException(String message) {
+        super(message);
+    }
+}
+
+
+==================================================
+3. Example : AgeNotValidException
+==================================================
+
+// Custom exception class
+
+class AgeNotValidException extends Exception {
+
+    public AgeNotValidException(String message) {
+        super(message);
+    }
+}
+
+
+// Using the custom exception
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        int age = 15;
+
+        try {
+            if (age < 18) {
+                throw new AgeNotValidException(
+                    "Age must be 18 or above");
+            } else {
+                System.out.println("You can vote");
+            }
+        } catch (AgeNotValidException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
+
+
+==================================================
+4. Output
+==================================================
+
+Exception: Age must be 18 or above
+
+
+==================================================
+5. Another Example : InsufficientBalanceException
+==================================================
+
+// Custom exception class
+
+class InsufficientBalanceException extends Exception {
+
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
+}
+
+
+// Using the custom exception
+
+class Bank {
+
+    void withdraw(int amount, int balance)
+        throws InsufficientBalanceException {
+
+        if (amount > balance) {
+            throw new InsufficientBalanceException(
+                "Insufficient balance!");
+        } else {
+            System.out.println("Withdrawal successful!");
+        }
+    }
+}
+
+
+public class TestBank {
+
+    public static void main(String[] args) {
+
+        Bank b = new Bank();
+
+        try {
+            b.withdraw(5000, 2000);
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
+
+
+Output:
+
+Exception: Insufficient balance!
+
+
+==================================================
+6. Key Points
+==================================================
+
+• Custom exceptions are created by extending Exception or RuntimeException.
+• Used to handle application-specific errors.
+• Provide meaningful error messages.
+• Make the code more readable and maintainable.
+• Can be checked (extends Exception) or unchecked (extends RuntimeException).
