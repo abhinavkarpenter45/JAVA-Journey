@@ -1,0 +1,138 @@
+==================================================
+Wrapper Classes in Java
+==================================================
+
+
+==================================================
+1. Introduction
+==================================================
+
+• Wrapper classes in Java provide a way to use primitive data types (int, char, etc.) as objects.
+• Each primitive type has a corresponding wrapper class in the java.lang package.
+• Wrapper classes are immutable (their values cannot be changed).
+• They are useful when we need to work with objects instead of primitive types, for example in Collections (ArrayList, HashSet, etc.) because collections can store only objects.
+
+
+==================================================
+2. Primitive Types and Their Wrapper Classes
+==================================================
+
+Primitive Type       Wrapper Class       Example Value
+
+byte                 Byte                Byte b = 10;
+short                Short               Short s = 20;
+int                  Integer             Integer i = 100;
+long                 Long                Long l = 1000L;
+float                Float               Float f = 10.5f;
+double               Double              Double d = 99.9;
+char                 Character           Character c = 'A';
+boolean              Boolean             Boolean b = true;
+
+
+==================================================
+3. Creating Wrapper Class Objects
+==================================================
+
+public class Test {
+    public static void main(String[] args) {
+
+        Integer i = new Integer(10);   // old way (deprecated)
+        Integer j = Integer.valueOf(20);   // recommended
+        Double d = Double.valueOf(5.6);
+        Character c = Character.valueOf('B');
+        Boolean b = Boolean.valueOf(true);
+
+        System.out.println(i + " " + j + " " + d + " " + c + " " + b);
+    }
+}
+
+
+==================================================
+4. Autoboxing and Unboxing
+==================================================
+
+• Autoboxing: Automatic conversion of primitive type to wrapper class object.
+• Unboxing: Automatic conversion of wrapper class object to primitive type.
+
+
+Example: Autoboxing and Unboxing
+
+public class Demo {
+    public static void main(String[] args) {
+
+        // Autoboxing
+        int a = 10;
+        Integer obj = a;   // int → Integer (autoboxing)
+
+        // Unboxing
+        Integer obj2 = 20;
+        int b = obj2;      // Integer → int (unboxing)
+
+        System.out.println(a + " " + obj);
+        System.out.println(obj2 + " " + b);
+    }
+}
+
+
+Output:
+
+10 10
+20 20
+
+
+==================================================
+5. Commonly Used Methods
+==================================================
+
+Method              Description
+
+valueOf()            Returns an object of wrapper class for the given value.
+
+parseXxx()           Converts a String to primitive type. (e.g., Integer.parseInt())
+
+xxxValue()           Converts wrapper object to primitive type. (e.g., intValue())
+
+toString()           Returns string representation of the value.
+
+compareTo()          Compares two wrapper objects.
+
+equals()             Checks equality of two wrapper objects.
+
+
+==================================================
+6. Example : Using Common Methods
+==================================================
+
+public class Example {
+    public static void main(String[] args) {
+
+        String str = "123";
+        int num = Integer.parseInt(str);   // String → int
+        Integer obj = Integer.valueOf(num);   // int → Integer object
+
+        System.out.println(obj.intValue());   // Integer → int
+        System.out.println(obj.toString());   // Integer → String
+        System.out.println(Integer.compare(10, 20));   // compareTo
+        System.out.println(obj.equals(123));   // equals
+    }
+}
+
+
+Output:
+
+123
+123
+-1
+true
+
+
+==================================================
+7. Key Points
+==================================================
+
+• Wrapper classes are immutable.
+• They are in java.lang package.
+• Used to convert between primitive types and objects.
+• Autoboxing and unboxing make the conversion automatic.
+• Useful in collections, generics and when an object is required instead of a primitive type.
+• Common methods: valueOf(), parseXxx(), xxxValue(), toString(), equals(), compareTo().
