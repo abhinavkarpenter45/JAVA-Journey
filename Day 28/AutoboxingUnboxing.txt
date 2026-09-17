@@ -1,0 +1,117 @@
+==================================================
+Autoboxing / Unboxing in Java
+==================================================
+
+
+==================================================
+1. Introduction
+==================================================
+
+• Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class.
+• Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type.
+• Introduced in Java 5 (JDK 1.5).
+• It is done automatically by the compiler, so we don’t need to manually use methods like Integer.valueOf() or intValue().
+
+
+==================================================
+2. Mapping between Primitive Types and Wrapper Classes
+==================================================
+
+Primitive Type       Wrapper Class
+
+byte                 Byte
+short                Short
+int                  Integer
+long                 Long
+float                Float
+double               Double
+char                 Character
+boolean              Boolean
+
+
+==================================================
+3. Autoboxing (Primitive → Wrapper)
+==================================================
+
+• Conversion of a primitive type to its corresponding wrapper class object is called Autoboxing.
+• It happens automatically.
+
+Syntax:
+
+int a = 10;
+Integer obj = a;    // Autoboxing
+
+
+Example:
+
+public class Test {
+    public static void main(String[] args) {
+
+        int a = 10;
+        Integer obj = a;    // Autoboxing
+        System.out.println(obj);    // 10
+    }
+}
+
+
+==================================================
+4. Unboxing (Wrapper → Primitive)
+==================================================
+
+• Conversion of a wrapper class object to its corresponding primitive type is called Unboxing.
+• It also happens automatically.
+
+Syntax:
+
+Integer obj = 20;
+int b = obj;    // Unboxing
+
+
+Example:
+
+public class Test {
+    public static void main(String[] args) {
+
+        Integer obj = 20;
+        int b = obj;    // Unboxing
+        System.out.println(b);    // 20
+    }
+}
+
+
+==================================================
+5. Both Together (Autoboxing + Unboxing)
+==================================================
+
+public class Demo {
+    public static void main(String[] args) {
+
+        int a = 10;          // primitive
+        Integer obj = a;     // Autoboxing (int → Integer)
+        int b = obj;         // Unboxing (Integer → int)
+
+        System.out.println(a);     // 10
+        System.out.println(obj);   // 10
+        System.out.println(b);     // 10
+    }
+}
+
+
+==================================================
+6. Important Points
+==================================================
+
+• Autoboxing and unboxing are done by the compiler automatically.
+• It makes the code simple and readable.
+• It is useful in Collections (e.g., ArrayList, HashMap) where only objects are allowed.
+• It can slightly affect performance due to the overhead of object creation and conversion.
+• We can also do manual conversion using valueOf() and intValue() methods if needed.
+
+
+==================================================
+7. Summary
+==================================================
+
+Autoboxing converts primitive types to wrapper classes and
+unboxing converts wrapper classes to primitive types automatically.
+It helps in writing cleaner and more readable code.
